@@ -14,12 +14,16 @@
   justify-content: center;
   flex-direction: column;
   gap: 5px;
+  background-image: url('../Images/—Pngtree—back\ to\ school\ doodle\ border_19449399.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .welcomepic {
   width: 40%;
   height: 40vh;
-  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/049/091/972/small/modern-school-building-with-classical-columns-transparent-png.png");
+  background-image: url("../Images/image.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,13 +32,16 @@
 .Welcomeheading {
   width: 80%;
   height: 10vh;
-  color: white;
+  color: #ffd700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: large;
-  text-shadow: 5px 5px 10px rgb(0, 0, 0);
-  -webkit-text-stroke: 0.1px black;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Welcomeheading h1{
+  background-color: black;
+  padding: 4px 30px;
 }
 
 .welcomeloginbtn {
@@ -54,11 +61,12 @@
   align-items: center;
   justify-content: center;
   transition: 0.3s ease;
+  border: 2px solid #ff4500;
 }
 
 a {
   text-decoration: none;
-  color: #ff4500;
+  color:black;
 }
 
 .Login:hover {
