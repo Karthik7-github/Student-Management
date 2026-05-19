@@ -407,7 +407,7 @@ label {
 }
 
 .s2{
-  color: #ff4500;
+  color: #33ff00;
 }
 
 .selection:hover{
@@ -422,7 +422,7 @@ label {
 
 .selection:hover .s2{
   color: #000;
-  background-color: #ff4500;
+  background-color: #33ff00;
 }
 
 /* Student Registration Page  */
@@ -589,13 +589,14 @@ button:focus:not(:focus-visible) {
 }
 
 .teach{
-  background-color: #ff4500;
+  background-color: #33ff00;
 }
 
 .teach h1{
-  color: #ff4500;
+  color: #33ff00;
 }
 
 .teachin{
   color: white;
 }
+

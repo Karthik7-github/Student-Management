@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
-async function Register(req, res) {
+async function TeacherRegister(req, res) {
 
     const { Name, Age, DOB, AdminID, Subject, Role, Email, Password, Timetable } = req.body;
 
@@ -12,9 +12,9 @@ async function Register(req, res) {
     });
 
     if (isalreadyexists) {
-        res.status(409).json({
+        return res.status(409).json({
             "Message": "User Already Exists"
-        })
+        });
     }
 
 
@@ -25,11 +25,11 @@ async function Register(req, res) {
     });
 
     const token = jwt.sign({
-        id:Teacher._id,
-        role:Teacher.role
-    },process.env.JWT_SECRET);
+        id: Teacher._id,
+        role: Teacher.Role
+    }, process.env.JWT_SECRET);
 
-    res.cookie("token",token);
+    res.cookie("token", token);
 
 
     res.status(201).send({
@@ -39,4 +39,4 @@ async function Register(req, res) {
 }
 
 
-module.exports = { Register };
+module.exports = { TeacherRegister };

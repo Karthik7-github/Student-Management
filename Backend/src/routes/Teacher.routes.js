@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Teacher = require('../controllers/Teacher.controller');
+const Teachercontroller = require('../controllers/Teacher.controller');
 
 
-router.post('/register',Teacher.Register);
-
+router.post('/tregister',Teachercontroller.TeacherRegister);
 
 module.exports = router;

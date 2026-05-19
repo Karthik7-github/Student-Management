@@ -20,8 +20,7 @@ const Teacherschema = mongoose.Schema({
     },
     "Email":{
         type:String,
-        required:true,
-        unique:true
+        required:true
     },
     "Password":{
         type:String,
@@ -34,7 +33,7 @@ const Teacherschema = mongoose.Schema({
 });
 
 
-const TeacherModel = mongoose.model('Teachers',Teacherschema);
+const TeacherModel = new mongoose.model('Teachers',Teacherschema);
 
 module.exports = TeacherModel;
 
