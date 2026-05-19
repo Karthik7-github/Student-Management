@@ -343,7 +343,7 @@ label {
   outline: 0;
 }
 
-/*  Regisetr Page */
+/*  Regisetr Selection  Page */
 
 .Registerpageselection{
   width: 100%;
@@ -380,6 +380,7 @@ label {
   align-content: center;
   justify-content: center;
   flex-direction: column;
+  border: 5px solid black;
   transition: 0.3s ease;
 }
 
@@ -411,7 +412,7 @@ label {
 
 .selection:hover{
   box-shadow: 15px 20px 0px black;
-  border: 5px solid black;
+  
 }
 
 .selection:hover .s1{
@@ -424,3 +425,177 @@ label {
   background-color: #ff4500;
 }
 
+/* Student Registration Page  */
+
+.stuform{
+  width: 100%;
+  height: 100vh;
+  background-color: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stuform h1{
+  background-color: black;
+  padding: 10px 10px;
+  color: #ffd700;
+  font-family: cursive;
+}
+
+.stuform .stubox{
+  width: 90%;
+  height: 85%;
+  background-color: transparent;
+  
+}
+
+form{
+  width: 100%;
+  height: 100%;
+}
+
+.stubox  .forml1{
+  width: 100%;
+  height: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+
+/* UI VERSE */ 
+
+.inputBox {
+  position: relative;
+}
+
+.inputBox input {
+  padding: 15px 20px;
+  outline: none;
+  background: transparent;
+  border-radius: 5px;
+  color: black;
+  border: 2px solid black;
+  font-size: 1em;
+  width: 250px;
+}
+
+.inputBox span {
+  position: absolute;
+  left: 0;
+  font-size: 1em;
+  transform: translateX(14px) translateY(-7.5px);
+  padding: 0 6px 1px 5px;
+  border-radius: 2px;
+  background: #212121;
+  letter-spacing: 1px;
+  border: 1px solid black;
+  color: white;
+}
+
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ transition: filter 250ms;
+ user-select: none;
+ touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ transform: translateY(2px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ transform: translateY(-4px);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ filter: brightness(110%);
+}
+
+button:hover .front {
+ transform: translateY(-6px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ transform: translateY(-2px);
+ transition: transform 34ms;
+}
+
+button:hover .shadow {
+ transform: translateY(4px);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ transform: translateY(1px);
+ transition: transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+
+.teach{
+  background-color: #ff4500;
+}
+
+.teach h1{
+  color: #ff4500;
+}
+
+.teachin{
+  color: white;
+}
