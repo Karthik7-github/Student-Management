@@ -49,7 +49,8 @@
   height: 15vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+
 }
 
 .Login {
@@ -64,6 +65,10 @@
   border: 2px solid #ff4500;
 }
 
+.register{
+  border: 2px solid #ffd700;
+}
+
 a {
   text-decoration: none;
   color:black;
@@ -74,6 +79,14 @@ a {
   border: 2px solid white;
   color: white;
   box-shadow: 4px 8px 0px black;
+}
+
+.register:hover{
+  background-color: #ffd700;
+  border: 2px solid white;
+  color: white;
+  box-shadow: 4px 8px 0px black;
+
 }
 
 /* Login Page */
@@ -329,3 +342,85 @@ label {
   padding-bottom: 0px;
   outline: 0;
 }
+
+/*  Regisetr Page */
+
+.Registerpageselection{
+  width: 100%;
+  height: 100vh;
+  background-image: url('../Images/flat-lay-school-stationery-wooden-background-back-school-concept-copy-space.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.reshead{
+  color: wheat;
+  background-color: black;
+  padding: 10px 20px;
+}
+
+.registerselectionbox{
+  width: 70%;
+  height: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.registerselectionbox .selection{
+  width: 300px;
+  height: 300px;
+  background-color: black;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+
+.selection .sssbox{
+  width: 100%;
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 150px;
+}
+
+.selection .ssstext{
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: cursive;
+}
+
+.s1{
+  color: #ffd700;
+}
+
+.s2{
+  color: #ff4500;
+}
+
+.selection:hover{
+  box-shadow: 15px 20px 0px black;
+  border: 5px solid black;
+}
+
+.selection:hover .s1{
+  color: #000;
+  background-color: #ffd700;
+}
+
+.selection:hover .s2{
+  color: #000;
+  background-color: #ff4500;
+}
+

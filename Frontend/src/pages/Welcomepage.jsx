@@ -17,6 +17,14 @@ const Welcomepage = () => {
               <h2>Login</h2>
             </div>
           </Link>
+          <Link to="/Register">
+            <div className="Login register">
+              <h2>Register</h2>
+            </div>
+          </Link>
+        </div>
+        <div className="registerhead">
+          <h3>Please Register Before You Login In</h3>
         </div>
       </div>
     </div>

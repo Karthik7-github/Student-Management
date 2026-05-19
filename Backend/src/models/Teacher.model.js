@@ -13,11 +13,6 @@ const Teacherschema = mongoose.Schema({
         type:String,
         required:true
     },
-    "AdminID":{
-        type:String,
-        unique:true,
-        required:true
-    },
     "Subject":String,
     "Role":{
         type:String,
