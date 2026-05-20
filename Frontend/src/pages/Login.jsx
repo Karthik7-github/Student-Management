@@ -1,35 +1,85 @@
-import React from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("http://localhost:5000/api/teacher/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Email: email,
+          Password: password,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      if (!res.ok) {
+        alert(data.Message || "Error");
+        return;
+      }
+
+      localStorage.setItem("user",JSON.stringify(data.User));
+
+      if (data.User.Role == "Student") {
+        navigate("/studentwelcome", { state: { user: data.Userser } });
+      } else {
+        navigate("/teacherwelcome", { state: { user: data.User } });
+      }
+
+      setEmail("");
+      setPassword("");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
-      <form>
-      <div className="Loginpage">
-        <div className="Loginbox">
-          <h1>Login</h1>
-          <div class="brutalist-container styleinput">
-            <input
-              placeholder="TYPE EMAIL..."
-              class="brutalist-input smooth-type"
-              type="email"
-              required
-            />
-            <label class="brutalist-label">Email : </label>
+      <form onSubmit={handlesubmit}>
+        <div className="Loginpage">
+          <div className="Loginbox">
+            <h1>Login</h1>
+            <div className="brutalist-container styleinput">
+              <input
+                value={email}
+                placeholder="TYPE EMAIL..."
+                className="brutalist-input smooth-type"
+                type="email"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                required
+              />
+              <label className="brutalist-label">Email : </label>
+            </div>
+            <div className="brutalist-container styleinput">
+              <input
+                value={password}
+                placeholder="TYPE PASSWORD..."
+                className="brutalist-input smooth-type"
+                type="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+                required
+              />
+              <label className="brutalist-label">Password : </label>
+            </div>
+            <button className="button" type="submit">
+              <span>Submit</span>
+            </button>
           </div>
-          <div class="brutalist-container styleinput">
-            <input
-              placeholder="TYPE PASSWORD..."
-              class="brutalist-input smooth-type"
-              type="password"
-              required
-            />
-            <label class="brutalist-label">Password : </label>
-          </div>
-          <button class="button" type="submit">
-            <span>Submit</span>
-          </button>
         </div>
-      </div>
       </form>
     </div>
   );

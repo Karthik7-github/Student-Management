@@ -5,4 +5,6 @@ const Teachercontroller = require('../controllers/Teacher.controller');
 
 router.post('/tregister',Teachercontroller.TeacherRegister);
 
+router.post('/login',Teachercontroller.Login);
+
 module.exports = router;
