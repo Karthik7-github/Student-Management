@@ -6,6 +6,7 @@ const Studentschema = mongoose.Schema({
     "DOB":String,
     "Role":String,
     "Class":Number,
+    "StudentID":String,
     Email:{
         type:String,
         require:true

@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  background-image: url('../Images/—Pngtree—back\ to\ school\ doodle\ border_19449399.jpg');
+  background-image: url("../Images/—Pngtree—back\ to\ school\ doodle\ border_19449399.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,10 +36,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.Welcomeheading h1{
+.Welcomeheading h1 {
   background-color: black;
   padding: 4px 30px;
 }
@@ -50,7 +50,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
 }
 
 .Login {
@@ -65,13 +64,13 @@
   border: 2px solid #ff4500;
 }
 
-.register{
+.register {
   border: 2px solid #ffd700;
 }
 
 a {
   text-decoration: none;
-  color:black;
+  color: black;
 }
 
 .Login:hover {
@@ -81,12 +80,11 @@ a {
   box-shadow: 4px 8px 0px black;
 }
 
-.register:hover{
+.register:hover {
   background-color: #ffd700;
   border: 2px solid white;
   color: white;
   box-shadow: 4px 8px 0px black;
-
 }
 
 /* Login Page */
@@ -143,7 +141,9 @@ label {
   border-radius: 0;
   outline: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 5px 5px 0 #000, 10px 10px 0 #4a90e2;
+  box-shadow:
+    5px 5px 0 #000,
+    10px 10px 0 #4a90e2;
 }
 
 @keyframes glitch {
@@ -168,7 +168,8 @@ label {
 }
 
 .brutalist-input:focus {
-  animation: focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
+  animation:
+    focus-pulse 4s cubic-bezier(0.25, 0.8, 0.25, 1) infinite,
     glitch 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
 }
 
@@ -306,12 +307,12 @@ label {
   }
 }
 
-.styleinput{
+.styleinput {
   padding-right: 50px;
   padding-bottom: 4px;
 }
 
-/* From Uiverse.io by mi-series */ 
+/* From Uiverse.io by mi-series */
 .button {
   width: 150px;
   padding: 0;
@@ -345,10 +346,10 @@ label {
 
 /*  Regisetr Selection  Page */
 
-.Registerpageselection{
+.Registerpageselection {
   width: 100%;
   height: 100vh;
-  background-image: url('../Images/flat-lay-school-stationery-wooden-background-back-school-concept-copy-space.jpg');
+  background-image: url("../Images/flat-lay-school-stationery-wooden-background-back-school-concept-copy-space.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -358,13 +359,13 @@ label {
   flex-direction: column;
 }
 
-.reshead{
+.reshead {
   color: wheat;
   background-color: black;
   padding: 10px 20px;
 }
 
-.registerselectionbox{
+.registerselectionbox {
   width: 70%;
   height: 70%;
   display: flex;
@@ -372,7 +373,7 @@ label {
   justify-content: space-evenly;
 }
 
-.registerselectionbox .selection{
+.registerselectionbox .selection {
   width: 300px;
   height: 300px;
   background-color: black;
@@ -384,7 +385,7 @@ label {
   transition: 0.3s ease;
 }
 
-.selection .sssbox{
+.selection .sssbox {
   width: 100%;
   height: 75%;
   display: flex;
@@ -393,7 +394,7 @@ label {
   font-size: 150px;
 }
 
-.selection .ssstext{
+.selection .ssstext {
   width: 100%;
   height: 25%;
   display: flex;
@@ -402,32 +403,31 @@ label {
   font-family: cursive;
 }
 
-.s1{
+.s1 {
   color: #ffd700;
 }
 
-.s2{
+.s2 {
   color: #33ff00;
 }
 
-.selection:hover{
+.selection:hover {
   box-shadow: 15px 20px 0px black;
-  
 }
 
-.selection:hover .s1{
+.selection:hover .s1 {
   color: #000;
   background-color: #ffd700;
 }
 
-.selection:hover .s2{
+.selection:hover .s2 {
   color: #000;
   background-color: #33ff00;
 }
 
 /* Student Registration Page  */
 
-.stuform{
+.stuform {
   width: 100%;
   height: 100vh;
   background-color: #ffd700;
@@ -436,28 +436,28 @@ label {
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  z-index: 0;
 }
 
-.stuform h1{
+.stuform h1 {
   background-color: black;
   padding: 10px 10px;
   color: #ffd700;
   font-family: cursive;
 }
 
-.stuform .stubox{
+.stuform .stubox {
   width: 90%;
   height: 85%;
   background-color: transparent;
-  
 }
 
-form{
+form {
   width: 100%;
   height: 100%;
 }
 
-.stubox  .forml1{
+.stubox .forml1 {
   width: 100%;
   height: 33%;
   display: flex;
@@ -465,9 +465,7 @@ form{
   justify-content: space-evenly;
 }
 
-
-
-/* UI VERSE */ 
+/* UI VERSE */
 
 .inputBox {
   position: relative;
@@ -497,42 +495,40 @@ form{
   color: white;
 }
 
-/* From Uiverse.io by cssbuttons-io */ 
+/* From Uiverse.io by cssbuttons-io */
 button {
- position: relative;
- border: none;
- background: transparent;
- padding: 0;
- cursor: pointer;
- outline-offset: 4px;
- transition: filter 250ms;
- user-select: none;
- touch-action: manipulation;
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  touch-action: manipulation;
 }
 
 .shadow {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- border-radius: 12px;
- background: hsl(0deg 0% 0% / 0.25);
- will-change: transform;
- transform: translateY(2px);
- transition: transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
 .edge {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- border-radius: 12px;
- background: linear-gradient(
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
     to left,
     hsl(340deg 100% 16%) 0%,
     hsl(340deg 100% 32%) 8%,
@@ -542,61 +538,113 @@ button {
 }
 
 .front {
- display: block;
- position: relative;
- padding: 12px 27px;
- border-radius: 12px;
- font-size: 1.1rem;
- color: white;
- background: hsl(345deg 100% 47%);
- will-change: transform;
- transform: translateY(-4px);
- transition: transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
 button:hover {
- filter: brightness(110%);
+  filter: brightness(110%);
 }
 
 button:hover .front {
- transform: translateY(-6px);
- transition: transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 button:active .front {
- transform: translateY(-2px);
- transition: transform 34ms;
+  transform: translateY(-2px);
+  transition: transform 34ms;
 }
 
 button:hover .shadow {
- transform: translateY(4px);
- transition: transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 button:active .shadow {
- transform: translateY(1px);
- transition: transform 34ms;
+  transform: translateY(1px);
+  transition: transform 34ms;
 }
 
 button:focus:not(:focus-visible) {
- outline: none;
+  outline: none;
 }
 
-.teach{
+.teach {
   background-color: #33ff00;
 }
 
-.teach h1{
+.teach h1 {
   color: #33ff00;
 }
 
-.teachin{
+.teachin {
   color: white;
 }
 
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert .alertcard {
+  width: 35%;
+  height: 40vh;
+  background-color: red;
+  border-radius: 10px;
+  border: 2px solid gold;
+  box-shadow: 0px 10px 90px black;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.show {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+}
+
+.hide{
+  display: none;
+}
+
+.alertcard h1{
+  color: black;
+  background-color: transparent;
+}
+
+/* From Uiverse.io by adamgiebl */ 
+.alertcard  button{
+  background: #fbca1f;
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
+}
+
+.alertcard button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+
+}
+
+.alertcard button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}

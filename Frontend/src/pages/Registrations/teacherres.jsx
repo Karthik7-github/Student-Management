@@ -1,50 +1,85 @@
-import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const teacherres = () => {
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [dob, setDob] = useState("");
   const [subject, setSubject] = useState("");
-  const [role, setRole] = uReState("");
+  const [role, setRole] = useState("");
+  const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState("hide");
 
-  const Handlesubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("http://localhost:5000/api/teacher/tregister", {
-        method: "POST",
-        headers: {
-          "Connect-Type": "application/json",
-        },
-        body: JSON.stringify({
-          Name: name,
-          Age: age,
-          DOB: dob,
-          Subject: subject,
-          Role: role,
-          Email: email,
-          Password: password,
-        }),
-      });
+ const Handlesubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const res = await fetch("http://localhost:5000/api/teacher/tregister", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        Name: name,
+        Age: age,
+        DOB: dob,
+        Subject: subject,
+        Role: role,
+        TeacherID: id,
+        Email: email,
+        Password: password,
+      }),
+    });
 
-      const data = res.json();
-      console.log(data);
-    } catch (err) {
-      console.log(err);
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.Message || "Error");
+      return;
     }
-    alert('Form Submitted');
-  };
+
+    console.log("Success:", data);
+
+    setName("");
+    setAge("");
+    setDob("");
+    setEmail("");
+    setId("");
+    setPassword("");
+    setRole("");
+    setSubject("");
+
+    setShow("show");
+
+  } catch (err) {
+    console.log(err);
+    alert("Network Error");
+  }
+};
 
   return (
     <div>
       <div className="stuform teach">
+        <div className={`alert ${show}`}>
+          <div className="alertcard">
+            <i
+              class="fa-solid fa-heart"
+              style={{ fontSize: "30px", color: "#fbca1f" }}
+            ></i>
+            <h1 style={{ color: "#fbca1f" }}>Registration Successfully</h1>
+            <Link to="/Login">
+              <button>Button</button>
+            </Link>
+          </div>
+        </div>
         <h1>Lecturer (Adimin) Registraion Form</h1>
         <div className="stubox">
           <form onSubmit={Handlesubmit}>
             <div className="forml1">
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={name}
                   required=""
                   type="text"
                   placeholder="Write here..."
@@ -55,8 +90,9 @@ const teacherres = () => {
                 />
                 <span>Name :</span>
               </div>
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={age}
                   required=""
                   type="text"
                   placeholder="Write here..."
@@ -67,8 +103,9 @@ const teacherres = () => {
                 />
                 <span>Age :</span>
               </div>
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={dob}
                   required=""
                   type="text"
                   placeholder="Write here..."
@@ -81,8 +118,9 @@ const teacherres = () => {
               </div>
             </div>
             <div className="forml1">
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={subject}
                   required=""
                   type="text"
                   placeholder="Write here..."
@@ -93,8 +131,9 @@ const teacherres = () => {
                 />
                 <span>Subject :</span>
               </div>
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={role}
                   required=""
                   type="text"
                   placeholder="Write here as Student ..."
@@ -105,10 +144,11 @@ const teacherres = () => {
                 />
                 <span>Role :</span>
               </div>
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={email}
                   required=""
-                  type="text"
+                  type="email"
                   placeholder="Write Lecturer here..."
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -119,8 +159,9 @@ const teacherres = () => {
               </div>
             </div>
             <div className="forml1">
-              <div class="inputBox">
+              <div className="inputBox">
                 <input
+                  value={password}
                   required=""
                   type="password"
                   placeholder="Write here..."
@@ -131,10 +172,23 @@ const teacherres = () => {
                 />
                 <span>Password :</span>
               </div>
+              <div className="inputBox">
+                <input
+                  value={id}
+                  required=""
+                  type="text"
+                  placeholder="Write here..."
+                  onChange={(e) => {
+                    setId(e.target.value);
+                  }}
+                  required
+                />
+                <span>ID :</span>
+              </div>
               <button type="submit">
-                <span class="shadow"></span>
-                <span class="edge"></span>
-                <span class="front text" type="submit">
+                <span className="shadow"></span>
+                <span className="edge"></span>
+                <span className="front text" type="submit">
                   Submit
                 </span>
               </button>

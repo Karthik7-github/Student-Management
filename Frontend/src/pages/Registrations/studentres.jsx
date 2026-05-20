@@ -1,51 +1,84 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const studentres = () => {
-
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [dob, setDob] = useState("");
   const [grade, setGrade] = useState("");
   const [role, setRole] = useState("");
+  const [id, setId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState("hide");
 
   const Handlesubmit = async (e) => {
     e.preventDefault();
-    try{
-      const res = await fetch('http://localhost:5000/api/student/sregister',{
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        Name:name,
-        Age:age,
-        DOB:dob,
-        Class:grade,
-        Role:role,
-        Email:email,
-        Password:password
-      })
+    try {
+      const res = await fetch("http://localhost:5000/api/student/sregister", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          Name: name,
+          Age: age,
+          DOB: dob,
+          Class: grade,
+          Role: role,
+          StudentID: id,
+          Email: email,
+          Password: password,
+        }),
       });
 
       const data = await res.json();
-      console.log(data);
-    }catch(err){
-      console.log(err)
+
+      if (!res.ok) {
+        alert(data.Message || "Error");
+        return;
+      }
+
+      console.log("Success:", data);
+
+      setName("");
+      setAge("");
+      setDob("");
+      setEmail("");
+      setId("");
+      setPassword("");
+      setRole("");
+      setGrade("");
+
+      setShow("show");
+    } catch (err) {
+      console.log(err);
+      alert("Network Error");
     }
-    alert('Form Submitted');
   };
 
   return (
     <div>
       <div className="stuform">
+        <div className={`alert ${show}`}>
+          <div className="alertcard">
+            <i
+              className="fa-solid fa-heart"
+              style={{ fontSize: "30px", color: "#fbca1f" }}
+            ></i>
+            <h1 style={{ color: "#fbca1f" }}>Registration Successfully</h1>
+            <Link to="/Login">
+              <button>Button</button>
+            </Link>
+          </div>
+        </div>
         <h1>Student Registraion Form</h1>
         <div className="stubox">
           <form onSubmit={Handlesubmit}>
             <div className="forml1">
               <div className="inputBox">
                 <input
+                  value={name}
                   required=""
                   type="text"
                   placeholder="Write here..."
@@ -56,20 +89,24 @@ const studentres = () => {
               </div>
               <div className="inputBox">
                 <input
+                  value={age}
                   required=""
                   type="text"
                   placeholder="Write here..."
-                  onChange={(e)=>{setAge(e.target.value)}}
+                  onChange={(e) => {
+                    setAge(e.target.value);
+                  }}
                   required
                 />
                 <span>Age :</span>
               </div>
               <div className="inputBox">
                 <input
+                  value={dob}
                   required=""
                   type="text"
                   placeholder="Write here..."
-                  onChange={(e)=>setDob(e.target.value)}
+                  onChange={(e) => setDob(e.target.value)}
                   required
                 />
                 <span>DOB :</span>
@@ -78,30 +115,39 @@ const studentres = () => {
             <div className="forml1">
               <div className="inputBox">
                 <input
+                  value={grade}
                   required=""
                   type="text"
                   placeholder="Write here..."
-                  onChange={(e)=>{setGrade(e.target.value)}}
+                  onChange={(e) => {
+                    setGrade(e.target.value);
+                  }}
                   required
                 />
                 <span>Class :</span>
               </div>
               <div className="inputBox">
                 <input
+                  value={role}
                   required=""
                   type="text"
                   placeholder="Write here as Student ..."
-                  onChange={(e)=>{setRole(e.target.value)}}
+                  onChange={(e) => {
+                    setRole(e.target.value);
+                  }}
                   required
                 />
                 <span>Role :</span>
               </div>
               <div className="inputBox">
                 <input
+                  value={email}
                   required=""
-                  type="text"
+                  type="email"
                   placeholder="Write here..."
-                  onChange={(e)=>{setEmail(e.target.value)}}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   required
                 />
                 <span>Email :</span>
@@ -110,20 +156,34 @@ const studentres = () => {
             <div className="forml1">
               <div className="inputBox">
                 <input
+                  value={password}
                   required=""
                   type="password"
                   placeholder="Write here..."
-                  onChange={(e)=>{setPassword(e.target.value)}}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   required
                 />
                 <span>Password :</span>
               </div>
+              <div className="inputBox">
+                <input
+                  value={id}
+                  required=""
+                  type="text"
+                  placeholder="Write ID..."
+                  onChange={(e) => {
+                    setId(e.target.value);
+                  }}
+                  required
+                />
+                <span>ID :</span>
+              </div>
               <button type="submit">
                 <span className="shadow"></span>
                 <span className="edge"></span>
-                <span className="front text">
-                  Submit
-                </span>
+                <span className="front text">Submit</span>
               </button>
             </div>
           </form>

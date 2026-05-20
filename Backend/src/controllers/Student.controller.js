@@ -1,34 +1,39 @@
 const Studentmodel = require('../models/Student.model');
+const Teachermodel = require('../models/Teacher.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 async function StudentRegister(req, res) {
 
-    const { Name, Age, DOB, Role, Class, Email, Password, Marks } = req.body;
+    const { Name, Age, DOB, Role, Class, StudentID, Email, Password, Marks } = req.body;
 
-    const isalreadyexists = await Studentmodel.findOne({
+    const isstudentexists = await Studentmodel.findOne({
         Email
     });
 
-    if(isalreadyexists){
+    const isteacherexists = await Teachermodel.findOne({
+        Email
+    });
+
+    if (isstudentexists || isteacherexists) {
         return res.status(409).json({
-            'Message':"User Already Exists"
+            'Message': "User Already Exists"
         })
     }
 
-    const hash = await bcrypt.hash(Password,10);
+    const hash = await bcrypt.hash(Password, 10);
 
     const Student = await Studentmodel.create({
-        Name, Age, DOB, Role, Class, Email, Password:hash, Marks
+        Name, Age, DOB, Role, Class, StudentID, Email, Password: hash, Marks
     });
 
-    const token = jwt.sign({id:Student._id,role:Student.Role},process.env.JWT_SECRET);
+    const token = jwt.sign({ id: Student._id, role: Student.Role }, process.env.JWT_SECRET);
 
-    res.cookie("token",token);
+    res.cookie("token", token);
 
     res.status(201).json({
-        "Message":"Student Registered",
-        "Student":Student
+        "Message": "Student Registered",
+        "Student": Student
     })
 }
 

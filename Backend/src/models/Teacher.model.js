@@ -18,6 +18,7 @@ const Teacherschema = mongoose.Schema({
         type:String,
         required:true
     },
+    "TeacherID":String,
     "Email":{
         type:String,
         required:true
