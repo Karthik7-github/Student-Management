@@ -7,4 +7,6 @@ router.post('/tregister',Teachercontroller.TeacherRegister);
 
 router.post('/login',Teachercontroller.Login);
 
+router.post('/logout',Teachercontroller.Logout);
+
 module.exports = router;

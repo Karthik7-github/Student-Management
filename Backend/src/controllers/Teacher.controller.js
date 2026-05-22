@@ -3,7 +3,6 @@ const Studentmodel = require('../models/Student.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-
 async function TeacherRegister(req, res) {
 
     const { Name, Age, DOB, AdminID, Subject, Role, TeacherID, Email, Password, Timetable } = req.body;
@@ -25,8 +24,12 @@ async function TeacherRegister(req, res) {
 
     const hash = await bcrypt.hash(Password, 10);
 
+    const Color1 = ['#FF6B35', '#FFD166', '#00B8FF', '#10B981', '#A78BFA', '#FF006E', '#94A3B8', '#A3E635', '#7C3AED', '#E2E8F0', '#B21F1F'];
+
+    const Color = Color1[Math.floor(Math.random() * Color1.length)];
+
     const Teacher = await Teachermodel.create({
-        Name, Age, DOB, AdminID, Subject, Role, TeacherID, Email, Password: hash, Timetable
+        Name, Age, DOB, AdminID, Subject, Role, TeacherID, Email, Password: hash, Color, Timetable
     });
 
     const token = jwt.sign({
@@ -97,5 +100,9 @@ async function Login(req, res) {
     }
 }
 
+async function Logout(req, res) {
+    res.clearCookie("token")
+    res.status(200).json({ message: "User logged out successfully" })
+}
 
-module.exports = { TeacherRegister, Login };
+module.exports = { TeacherRegister, Login, Logout };

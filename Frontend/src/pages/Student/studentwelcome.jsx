@@ -1,21 +1,21 @@
-import { useLocation } from "react-router-dom";
+import React from "react";
+import StudentLayout from "./StudentLayout";
 
-const studentwelcome = () => {
-  
-  const location = useLocation();
-
-  const user = location.state?.user || JSON.parse(localStorage.getItem("user"));
+const Studentwelcome = () => {
+  const userData = localStorage.getItem("user");
+  const user = userData ? JSON.parse(userData) : null;
 
   if (!user) {
-    return <h1>No user data</h1>;
+    return <h1>No user data Please Login</h1>;
   }
 
   return (
-    <div>
-      <h1>Welcome {user?.Email}</h1>
-      <p>Role: {user?.Role}</p>
-    </div>
+    <StudentLayout>
+      <div className="studentwelcomepage">
+        
+      </div>
+    </StudentLayout>
   );
 };
 
-export default studentwelcome;
+export default Studentwelcome;

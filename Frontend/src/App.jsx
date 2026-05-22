@@ -4,7 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Registerpage';
 import Teacherres from './pages/Registrations/teacherres';
 import Studentres from './pages/Registrations/studentres';
-import StudentWelcome from './pages/Student/studentwelcome';
+import StudentWelcome from './pages/Student/StudentWelcome';
 import TeacherWelcome from './pages/Teacher/teacherwelcome';
 
 

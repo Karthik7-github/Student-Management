@@ -31,7 +31,7 @@ const Login = () => {
       localStorage.setItem("user",JSON.stringify(data.User));
 
       if (data.User.Role == "Student") {
-        navigate("/studentwelcome", { state: { user: data.Userser } });
+        navigate("/studentwelcome", { state: { user: data.User } });
       } else {
         navigate("/teacherwelcome", { state: { user: data.User } });
       }

@@ -19,7 +19,8 @@ const Studentschema = mongoose.Schema({
         "Subject":String,
         "Score":Number,
         "P/F":String
-    }]
+    }],
+    Color:String
 })
 
 const StudentModel = new mongoose.model('Students',Studentschema);
