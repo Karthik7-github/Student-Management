@@ -996,6 +996,7 @@ tr {
   font-family: cursive;
   border-radius: 10px;
   margin-bottom: 10px;
+  transition: 0.3s ease;
 }
 
 
@@ -1009,4 +1010,326 @@ tr {
 
 .announcements h3{
   margin-top: 10px;
+}
+
+.announcements:hover h1{
+  color: white;
+}
+
+.announcements:hover{
+  box-shadow: 0px 0px 10px black;
+}
+
+/* Chats page   */
+
+.promenu .persontosend{
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promenu .persontosend input{
+  width: 30%;
+  height: 40%;
+  background-color: #fff;
+  padding: 10px;
+  font-size: medium;
+  border: 2px solid black;
+}
+
+.promenu .persontosend button{
+  width: 100px;
+  height: 60%;
+  background-color: #fff;
+  margin-left: 20px;
+  border: 2px solid black;
+  font-size: medium;
+}
+
+.promenu .chatboxinner{
+ width: 100%;
+ height:73%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.promenu .chatboxinner .chatboxouter{
+  width: 90%;
+  height: 95%;
+  border: 2px solid black;
+  padding: 10px;
+  display:flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.promenu .personwhosends{
+  width: 100%;
+  height: 10vh;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promenu .personwhosends button{
+  width: 100px;
+  height: 70%;
+  margin-left: 20px;
+  border: 2px solid black;
+  font-size: medium;
+}
+
+
+.promenu .personwhosends textarea{
+  border: 2px solid black;
+  padding: 4px;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+.promenu .chatboxinner .chatboxouter .msg {
+  display: inline-block;      
+  max-width: 60%;             
+  min-width: 60px;           
+  padding: 10px 15px;
+  margin: 5px 0;
+  background-color: skyblue;
+  border-radius: 12px;
+  word-wrap: break-word;
+  border: 2px solid black;
+}
+
+.chatboxouter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+}
+
+.chatboxouter {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;              /* important */
+  overflow-y: auto;          /* 🔥 enables scroll */
+  padding: 10px;
+  gap: 8px;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.chatboxouter::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatboxouter::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.msg {
+  display: inline-block;
+  max-width: 60%;
+  padding: 10px 15px;
+  border-radius: 12px;
+  word-wrap: break-word;
+  font-size: 14px;
+  font-size: medium;
+  font-family:cursive;
+}
+
+.msg.received {
+  align-self: flex-start;
+}
+
+.msg.sent {
+  align-self: flex-end;
+}
+
+.promenu .personwhosends button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.promenu .personwhosends button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.promenu .personwhosends button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.promenu .personwhosends button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.promenu .personwhosends button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.promenu .personwhosends button:hover span {
+  transform: translateX(5em);
+}
+
+.promenu .personwhosends button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/*   Clubs */
+
+/* From Uiverse.io by gharsh11032000 */ 
+
+.promenu .allclubs .animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--user-color);
+  box-shadow: 0 0 0 2px  var(--user-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.promenu .allclubs .animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill:  var(--user-color);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.promenu .allclubs .animated-button .arr-1 {
+  right: 16px;
+}
+
+.promenu .allclubs .animated-button .arr-2 {
+  left: -25%;
+}
+
+.promenu .allclubs .animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color:  var(--user-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.promenu .allclubs .animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.promenu .allclubs .animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.promenu .allclubs .animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.promenu .allclubs .animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.promenu .allclubs .animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.promenu .allclubs .animated-button:hover svg {
+  fill: #212121;
+}
+
+.promenu .allclubs .animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px  var(--user-color);
+}
+
+.promenu .allclubs .animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+.promenu .allclubs{
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.promenu .clubs {
+  width: 100%;
+  /* height: 100%; */
+  /* background-color: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.promenu .clubs .clubslots {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.promenu .clubs .clubslots .clubslot {
+  padding: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
 }

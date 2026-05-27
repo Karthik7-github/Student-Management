@@ -21,4 +21,10 @@ router.post('/createannouncement',CourseController.CreateAnnouncements);
 
 router.get('/getannouncements',CourseController.GetAnnouncements);
 
+//  Messages 
+
+router.post('/createmsg',CourseController.CreateMessage);
+
+router.get('/getmsgs',CourseController.GetMessages);
+
 module.exports = router;
