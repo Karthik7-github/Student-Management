@@ -6,6 +6,8 @@ import axios from "axios";
 const StudentClubstoregister = () => {
   const User = JSON.parse(localStorage.getItem("user"));
 
+  const [selected, setSelected] = useState("All");
+
   useEffect(() => {
     const usercolor = JSON.parse(localStorage.getItem("user")).Color;
     document.documentElement.style.setProperty("--user-color", usercolor);
@@ -26,9 +28,13 @@ const StudentClubstoregister = () => {
 
   const username = User.Name;
 
-  const filteredclubs = club.filter((c) =>
-    c.Members?.some((m) => m.MemberName != username),
+  const filteredclubs = club.filter(
+    (c) =>
+      c.Members?.some((m) => m.MemberName !== username) &&
+      (selected === "All" || c.TypeofClub === selected),
   );
+
+  console.log(selected);
 
   return (
     <StudentLayout>
@@ -67,28 +73,39 @@ const StudentClubstoregister = () => {
           </Link>
         </div>
         <div className="selectclubs">
-          <div class="radio-input">
+          <div className="radio-input">
             <input
-              value="value-1"
+              value="All"
               name="value-radio"
               id="value-1"
               type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
+              defaultChecked
             />
-            <label for="value-1">Value 1</label>
+            <label htmlFor="value-1">Value 1</label>
             <input
-              value="value-2"
+              value="Tech"
               name="value-radio"
               id="value-2"
               type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
             />
-            <label for="value-2">Value 2</label>
+            <label htmlFor="value-2">Value 2</label>
+
             <input
-              value="value-3"
+              value="Sports"
               name="value-radio"
               id="value-3"
               type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
             />
-            <label for="value-3">Value 3</label>
+            <label htmlFor="value-3">Value 3</label>
           </div>
         </div>
         <div className="clubs">
@@ -100,7 +117,7 @@ const StudentClubstoregister = () => {
                 style={{ border: `2px solid ${Club.Color}` }}
               >
                 <div class="image" style={{ backgroundColor: Club.Color }}>
-                  <h1 style={{fontSize:"38px"}}>{Club.ClubName}</h1>
+                  <h1 style={{ fontSize: "38px" }}>{Club.ClubName}</h1>
                 </div>
                 <div class="content">
                   <span class="title">
@@ -108,9 +125,12 @@ const StudentClubstoregister = () => {
                   </span>
                   <p class="desc">{Club.Description}</p>
                   <div className="resntntoclub">
-                    <button className="primary-button" style={{"--club-color": Club.Color,}}>
-                    <h4 style={{ fontWeight: "bolder" }}>REGISTER</h4>
-                  </button>
+                    <button
+                      className="primary-button"
+                      style={{ "--club-color": Club.Color }}
+                    >
+                      <h4 style={{ fontWeight: "bolder" }}>REGISTER</h4>
+                    </button>
                   </div>
                 </div>
               </div>
