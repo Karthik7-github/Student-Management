@@ -27,4 +27,10 @@ router.post('/createmsg',CourseController.CreateMessage);
 
 router.get('/getmsgs',CourseController.GetMessages);
 
+// Clubs
+
+router.post('/createclub',CourseController.CreateClub);
+
+router.get('/getclubs',CourseController.GetClubs);
+
 module.exports = router;
