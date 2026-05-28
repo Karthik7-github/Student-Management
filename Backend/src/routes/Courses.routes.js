@@ -35,4 +35,11 @@ router.get('/getclubs',CourseController.GetClubs);
 
 router.put('/update/:id',CourseController.RegisterMember);
 
+// Club Chats
+
+router.post('/createclubmsg',CourseController.CreateClubmsg);
+
+router.get('/getclubmsgs',CourseController.GetClubchats);
+
+
 module.exports = router;

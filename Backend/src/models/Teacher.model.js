@@ -18,7 +18,10 @@ const Teacherschema = mongoose.Schema({
         type: String,
         required: true
     },
-    "TeacherID": String,
+    "TeacherID": {
+        type:String,
+        unique:true
+    },
     "Email": {
         type: String,
         required: true
