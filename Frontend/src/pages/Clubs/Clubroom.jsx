@@ -1,9 +1,11 @@
 import StudentLayout from '../Student/StudentLayout';
+import Clubdashboard from './Clubdashboard';
 
 const Clubroom = () => {
+  
   return (
     <StudentLayout>
-        <h1>Hi</h1>
+       <Clubdashboard/>
     </StudentLayout>
   )
 }
