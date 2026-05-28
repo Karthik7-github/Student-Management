@@ -77,7 +77,7 @@ const ClubChat = () => {
     } catch (err) {
       console.log(err);
     }
-
+    console.log(newMsg);
     setSendmsg("");
   };
 
@@ -100,7 +100,7 @@ const ClubChat = () => {
                     key={index}
                     style={{ backgroundColor: message.Color }}
                   >
-                    {message.Message}
+                   {message.MemberName} : {message.Message}
                   </div>
                 );
               })

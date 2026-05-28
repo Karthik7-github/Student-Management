@@ -221,7 +221,7 @@ async function RegisterMember(req, res) {
 
 async function CreateClubmsg(req, res) {
 
-    const { ClubID, MemberID, Message } = req.body;
+    const { ClubID, MemberName, Message } = req.body;
 
     const Color1 = [
         '#FF3CAC', // neon pink
@@ -244,7 +244,7 @@ async function CreateClubmsg(req, res) {
     const Color = Color1[Math.floor(Math.random() * Color1.length)];
 
     const Clubchat = await ClubchatModel.create({
-        ClubID, MemberID, Message, Color
+        ClubID, MemberName, Message, Color
     })
 
     res.status(201).json({
