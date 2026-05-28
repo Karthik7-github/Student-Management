@@ -15,6 +15,7 @@ const Studentdashboard = () => {
     console.log(res);
     navigate("/");
     localStorage.removeItem("user");
+    localStorage.removeItem("Club");
   };
 
   return (

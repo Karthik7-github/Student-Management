@@ -191,7 +191,31 @@ async function GetClubs(req, res) {
     })
 }
 
+async function RegisterMember(req, res) {
+
+    try {
+        const id = req.params.id;
+        const { MemberName } = req.body;
+
+        const updatedClub = await ClubModel.findByIdAndUpdate(
+            id,
+            {
+                $addToSet: {
+                    Members: { MemberName }
+                },
+            },
+            { new: true }
+        );
+
+        res.status(200).json(updatedClub);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+}
+
+
 module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
-    CreateMessage, GetMessages, CreateClub, GetClubs
+    CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember
 };

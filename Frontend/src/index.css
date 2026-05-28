@@ -1492,6 +1492,10 @@ body {
   cursor: pointer;
   position: relative;
   transition: all 0.3s ease-in-out;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .radio-input label:before {
@@ -1617,4 +1621,6 @@ body {
 .resntntoclub .primary-button:hover {
   color: var(--club-color);
 }
+
+
 

@@ -33,4 +33,6 @@ router.post('/createclub',CourseController.CreateClub);
 
 router.get('/getclubs',CourseController.GetClubs);
 
+router.put('/update/:id',CourseController.RegisterMember);
+
 module.exports = router;

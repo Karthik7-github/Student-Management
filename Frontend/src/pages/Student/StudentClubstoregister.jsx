@@ -7,13 +7,13 @@ const StudentClubstoregister = () => {
   const User = JSON.parse(localStorage.getItem("user"));
 
   const [selected, setSelected] = useState("All");
+  const [club, setClub] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     const usercolor = JSON.parse(localStorage.getItem("user")).Color;
     document.documentElement.style.setProperty("--user-color", usercolor);
   }, []);
-
-  const [club, setClub] = useState([]);
 
   useEffect(() => {
     axios
@@ -24,17 +24,35 @@ const StudentClubstoregister = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [refresh]);
 
   const username = User.Name;
 
   const filteredclubs = club.filter(
     (c) =>
-      c.Members?.some((m) => m.MemberName !== username) &&
+      !c.Members?.some((m) => m.MemberName === username) &&
       (selected === "All" || c.TypeofClub === selected),
   );
 
-  console.log(selected);
+  const handleregister = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:5000/api/course/update/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          MemberName: username,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+      setRefresh((prev)=>!prev)
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <StudentLayout>
@@ -84,7 +102,7 @@ const StudentClubstoregister = () => {
               }}
               defaultChecked
             />
-            <label htmlFor="value-1">Value 1</label>
+            <label htmlFor="value-1">All</label>
             <input
               value="Tech"
               name="value-radio"
@@ -94,7 +112,7 @@ const StudentClubstoregister = () => {
                 setSelected(e.target.value);
               }}
             />
-            <label htmlFor="value-2">Value 2</label>
+            <label htmlFor="value-2">Tech</label>
 
             <input
               value="Sports"
@@ -105,31 +123,63 @@ const StudentClubstoregister = () => {
                 setSelected(e.target.value);
               }}
             />
-            <label htmlFor="value-3">Value 3</label>
+            <label htmlFor="value-3">Sports</label>
+            <input
+              value="Music"
+              name="value-radio"
+              id="value-4"
+              type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
+            />
+            <label htmlFor="value-4">Music</label>
+            <input
+              value="Gaming"
+              name="value-radio"
+              id="value-5"
+              type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
+            />
+            <label htmlFor="value-5">Gaming</label>
+            <input
+              value="Arts"
+              name="value-radio"
+              id="value-6"
+              type="radio"
+              onChange={(e) => {
+                setSelected(e.target.value);
+              }}
+            />
+            <label htmlFor="value-6">Arts</label>
+
           </div>
         </div>
         <div className="clubs">
           <div className="clubslots">
             {filteredclubs.map((Club, index) => (
               <div
-                class="card"
+                className="card"
                 key={index}
                 style={{ border: `2px solid ${Club.Color}` }}
               >
-                <div class="image" style={{ backgroundColor: Club.Color }}>
+                <div className="image" style={{ backgroundColor: Club.Color }}>
                   <h1 style={{ fontSize: "38px" }}>{Club.ClubName}</h1>
                 </div>
-                <div class="content">
-                  <span class="title">
+                <div className="content">
+                  <span className="title">
                     {Club.ClubCode} || {Club.ClubID}
                   </span>
-                  <p class="desc">{Club.Description}</p>
+                  <p className="desc">{Club.Description}</p>
                   <div className="resntntoclub">
                     <button
                       className="primary-button"
                       style={{ "--club-color": Club.Color }}
+                      onClick={() => handleregister(Club._id)}
                     >
-                      <h4 style={{ fontWeight: "bolder" }}>REGISTER</h4>
+                      REGISTER
                     </button>
                   </div>
                 </div>

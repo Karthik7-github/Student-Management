@@ -17,6 +17,7 @@ import Studentchat from './pages/Student/Studentchat';
 import Studentlib from './pages/Student/Studentlib';
 import Studentpro from './pages/Student/Studentprofile';
 import Studentclubres from '../src/pages/Student/StudentClubstoregister';
+import Clubroom from '../src/pages/Clubs/Clubroom'
 
 const App = () => {
   return <div>
@@ -39,6 +40,7 @@ const App = () => {
       <Route path="/student/library" element={<Studentlib/>}/> 
       <Route path="/student/profile" element={<Studentpro/>}/>
       <Route path="/student/clubstoregister" element={<Studentclubres/>}/>
+      <Route path="/club/clubrrom" element={<Clubroom/>}/>
     </Routes>
   </div>;
 };
