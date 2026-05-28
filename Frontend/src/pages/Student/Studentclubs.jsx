@@ -31,6 +31,7 @@ const Studentclubs = () => {
   );
 
   const handleclub = async (club)=>{
+    console.log(club.Color2)
     localStorage.setItem("Club",JSON.stringify(club));
   }
 
@@ -105,7 +106,7 @@ const Studentclubs = () => {
                     <h2>Members :</h2>
                     <h3> {Club.Members.length}</h3>
                   </div>
-                  <Link to="/club/clubrrom"> 
+                  <Link to="/club">
                     <button className="primary-button" onClick={()=>handleclub(Club)}>
                       <h4 style={{ fontWeight: "bolder" }}>ENTER</h4>
                     </button>

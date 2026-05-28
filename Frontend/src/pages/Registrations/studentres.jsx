@@ -21,7 +21,7 @@ const studentres = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          Name: name,
+          Name: name.toUpperCase(),
           Age: age,
           DOB: dob,
           Class: grade,

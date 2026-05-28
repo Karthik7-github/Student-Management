@@ -46,10 +46,10 @@ const Clubdashboard = () => {
       <div className="secondline">
         <div class="nav">
           <div class="container" style={{"--club-color":Club.Color}}>
-            <div class="btn">Home</div>
-            <div class="btn">Contact</div>
-            <div class="btn">About</div>
-            <div class="btn">FAQ</div>
+            <div class="btn"><Link style={{color:Club.Color}} to='home'>Home</Link></div>
+            <div class="btn"><Link style={{color:Club.Color}} to='chat'>Chat</Link></div>
+            <div class="btn"><Link style={{color:Club.Color}} to='mems'>Members</Link></div>
+            <div class="btn"><Link style={{color:Club.Color}} to='faq'>FAQ</Link></div>
             <svg
               class="outline"
               overflow="visible"

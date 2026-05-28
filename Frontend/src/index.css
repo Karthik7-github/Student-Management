@@ -915,20 +915,20 @@ h2 {
   margin-top: 20px;
 }
 
-table {
+.tt table {
   border-collapse: collapse;
   width: 80%;
   height: 40px;
   gap: 10px;
 }
 
-tr {
+.tt tr {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.time {
+.tt .time {
   width: 200px;
   height: 6vh;
   border: 2px solid black;
@@ -939,7 +939,7 @@ tr {
   justify-content: center;
 }
 
-.subject {
+.tt .subject {
   width: 600px;
   border: 2px solid black;
   background-color: white;
@@ -950,7 +950,7 @@ tr {
   justify-content: center;
 }
 
-.time1 {
+.tt .time1 {
   width: 200px;
   background-color: black;
   margin-top: 10px;
@@ -964,7 +964,7 @@ tr {
   transition: 0.2s ease;
 }
 
-.subject1 {
+.tt .subject1 {
   width: 600px;
   background-color: black;
   margin-top: 10px;
@@ -978,13 +978,15 @@ tr {
   transition: 0.2s ease;
 }
 
-.trt1s1:hover .subject1 {
+.tt .trt1s1:hover .subject1 {
   color: black;
 }
 
-.trt1s1:hover .time1 {
+.tt .trt1s1:hover .time1 {
   color: black;
 }
+
+/*  Announcements  */
 
 .promenu .announcements {
   min-width: 50%;
@@ -1097,7 +1099,6 @@ tr {
   background-color: skyblue;
   border-radius: 12px;
   word-wrap: break-word;
-  border: 2px solid black;
 }
 
 .chatboxouter {
@@ -1804,12 +1805,13 @@ body {
 .container {
   position: absolute;
   inset: 0;
-  background: #000;
+  background: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 0.5em;
+  border: 1px solid var(--club-color);
 }
 
 .btn {
@@ -1849,3 +1851,240 @@ body {
   stroke-dasharray: 0 0 10 40 10 40;
   transition: 0.5s !important;
 }
+
+.clublayout{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.clubmainmenu{
+  width: 100%;
+  min-height: 70vh;
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
+.clubmembersbox{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.clubhome{
+  width: 100%;
+  gap: 25px;
+}
+
+.clubhome h2{
+  margin-left: 20px;
+  display: flex;
+  margin-top: 10px;
+}
+
+.clubhome .description{
+  width: 90%;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.clubhome .description h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.clubhome .description h2{
+  font-family:cursive;
+}
+
+.clubhome .clubevents{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.clubhome .clubevents h2{
+  min-width: 200px;
+}
+
+.clubmainmemberslist{
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.clubmainmemberslist table {
+  border-collapse: collapse;
+  width: 80%;
+  height: 40px;
+  gap: 10px;
+}
+
+.clubmainmemberslist tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clubmainmemberslist .time {
+  width: 200px;
+  height: 6vh;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clubmainmemberslist .subject {
+  width: 600px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clubmainmemberslist .time1 {
+  width: 200px;
+  background-color: black;
+  margin-top: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 6vh;
+  font-family: cursive;
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+.clubmainmemberslist .subject1 {
+  width: 600px;
+  background-color: black;
+  margin-top: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 6vh;
+  font-family: cursive;
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+.clubchat{
+  width: 95%;
+  height: 63vh;
+  border: 2px solid var(--club-color);
+  margin-left: 17px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--club-color);
+}
+
+
+.sentclubmember{
+  width: 95%;
+  height: 7vh;
+  border: 2px solid var(--club-color);
+  margin-left: 17px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--club-color);
+  margin-top: 20px;
+}
+
+.promenuclub{
+  width: 98%;
+  height: 10vh;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+
+.promenuclub .personwhosends {
+  width: 100%;
+  height: 10vh;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.promenuclub .personwhosends button {
+  width: 100px;
+  height: 70%;
+  margin-left: 20px;
+  border: 2px solid black;
+  font-size: medium;
+}
+
+.promenuclub .personwhosends textarea {
+  border: 2px solid black;
+  padding: 4px;
+  font-size: medium;
+  border-radius: 10px;
+}
+
+
+.promenuclub .personwhosends button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.promenuclub .personwhosends button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.promenuclub .personwhosends button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.promenuclub .personwhosends button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.promenuclub .personwhosends button:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.promenuclub .personwhosends button:hover span {
+  transform: translateX(5em);
+}
+
+.promenuclub .personwhosends button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
