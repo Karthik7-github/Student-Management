@@ -4,7 +4,9 @@ const AnnouncementsModel = require('../models/Announcements.model');
 const MessageModel = require('../models/Messages.model');
 const ClubModel = require('../models/Clubs.model');
 const ClubchatModel = require('../models/ClubChat.model');
-
+const ClubFaqsModel = require('../models/ClubFaq.model.js');
+const ResultModel = require('../models/Results.model.js');
+const ClubNotification = require('../models/ClubNotifications.model.js');
 //  Courses
 
 
@@ -217,6 +219,28 @@ async function RegisterMember(req, res) {
     }
 }
 
+async function LeftClub(req, res) {
+    try {
+        const id = req.params.id;
+        const { MemberName } = req.body;
+
+        const updatedClub = await ClubModel.findByIdAndUpdate(
+            id,
+            {
+                $pull: {
+                    Members: { MemberName: MemberName }  // remove matching member
+                }
+            },
+            { new: true }
+        );
+
+        res.status(200).json(updatedClub);
+
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+}
+
 //  Club Chats 
 
 async function CreateClubmsg(req, res) {
@@ -248,12 +272,12 @@ async function CreateClubmsg(req, res) {
     })
 
     res.status(201).json({
-        'Message':"Club Message Created",
-        Message:Clubchat
+        'Message': "Club Message Created",
+        Message: Clubchat
     })
 }
 
-async function GetClubchats(req,res) {
+async function GetClubchats(req, res) {
     const ClubMsgs = await ClubchatModel.find().sort({ _id: 1 });
 
     res.status(200).json({
@@ -262,7 +286,121 @@ async function GetClubchats(req,res) {
     });
 }
 
+// Club FAQS
+
+async function CreateClubFaqs(req, res) {
+
+    const { ClubID, MemberName, Question, Answer } = req.body;
+
+    const Color1 = [
+        '#FF3CAC', // neon pink
+        '#784BA0', // rich purple
+        '#2B86C5', // bright blue
+        '#00F5D4', // aqua neon
+        '#F15BB5', // candy pink
+        '#FEE440', // glowing yellow
+        '#00BBF9', // sky neon blue
+        '#9B5DE5', // electric violet
+        '#00F260', // neon green
+        '#FF9F1C', // bright orange
+        '#FF4D6D', // hot red pink
+        '#3A86FF', // strong blue
+        '#8338EC', // deep neon purple
+        '#06D6A0', // mint neon
+        '#FFBE0B'  // golden glow
+    ];
+
+    const Color = Color1[Math.floor(Math.random() * Color1.length)];
+
+    const ClubFAQS = await ClubFaqsModel.create({
+        ClubID, MemberName, Question, Answer, Color
+    });
+
+    res.status(201).json({
+        'Message': "Created FAQS",
+        ClubFaq: ClubFAQS
+    })
+}
+
+async function GetClubFaqs(req, res) {
+    const ClubFAQS = await ClubFaqsModel.find().sort({ _id: 1 });
+
+    res.status(200).json({
+        'Message': "ALL Club FAQS",
+        ClubFaq: ClubFAQS
+    })
+}
+
+// Results
+
+async function CreateResult(req, res) {
+
+    const { UserID, Semesters } = req.body;
+
+    const Result = await ResultModel.create({
+        UserID, Semesters
+    });
+
+    res.status(201).json({
+        'Message': "Result Created",
+        Result: Result
+    });
+}
+
+async function GetResult(req, res) {
+    const Result = await ResultModel.find();
+
+    res.status(200).json({
+        'Message': "Results",
+        Result: Result
+    })
+}
+
+async function CreateClubnot(req, res) {
+
+    const { ClubID, EventName, Description, Time } = req.body;
+
+    const Color1 = [
+        '#FF3CAC', // neon pink
+        '#784BA0', // rich purple
+        '#2B86C5', // bright blue
+        '#00F5D4', // aqua neon
+        '#F15BB5', // candy pink
+        '#FEE440', // glowing yellow
+        '#00BBF9', // sky neon blue
+        '#9B5DE5', // electric violet
+        '#00F260', // neon green
+        '#FF9F1C', // bright orange
+        '#FF4D6D', // hot red pink
+        '#3A86FF', // strong blue
+        '#8338EC', // deep neon purple
+        '#06D6A0', // mint neon
+        '#FFBE0B'  // golden glow
+    ];
+
+    const Color = Color1[Math.floor(Math.random() * Color1.length)];
+
+    const Notification = await ClubNotification.create({
+        ClubID, EventName, Description, Time, Color
+    });
+
+    res.status(200).json({
+        'Message': "Club Notification Created",
+        Notification: Notification
+    })
+}
+
+async function GetClubNots(req,res) {
+    const Notification = await ClubNotification.find();
+
+    res.status(200).json({
+        'Message': "All Clubs Notifications",
+        Notification: Notification
+    })
+}
+
 module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
-    CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg,GetClubchats
+    CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
+    CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots
 };

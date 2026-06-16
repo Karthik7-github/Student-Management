@@ -66,7 +66,7 @@ const Studentchat = () => {
     <StudentLayout>
       <div className="promenu">
         <div className="userprotitle" style={{ marginTop: "20px" }}>
-          <h1 style={{ fontSize: "40px" }}>Chats</h1>
+          <h1 style={{ fontSize: "40px",color:User.Color }}>Chats</h1>
         </div>
         <div className="persontosend">
           <input
@@ -78,7 +78,7 @@ const Studentchat = () => {
           />
         </div>
         <div className="chatboxinner">
-          <div className="chatboxouter">
+          <div className="chatboxouter" style={{boxShadow:`0px 0px 20px ${User.Color}`,backgroundColor:User.Color}}>
             {filteredmsgs.length > 0 ? (
               filteredmsgs.map((message, index) => {
                 return (

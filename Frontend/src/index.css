@@ -810,11 +810,12 @@ h2 {
   box-shadow: 2px 0px 10px black;
   transition: 0.3s ease;
   border: 2px solid transparent;
+  box-shadow: 0px 0px 20px var(--cou-color);
+  border: 2px solid white;
 }
 
 .promenu .coursedata:hover {
   color: white;
-  border: 2px solid white;
 }
 
 .promenu .coursedata .blackline {
@@ -859,8 +860,8 @@ h2 {
   flex-direction: column;
   text-align: center;
   font-size: small;
-  box-shadow: 2px 0px 15px black;
   transition: 0.3s ease;
+  border: 2px solid white;
 }
 
 .course:hover {
@@ -877,30 +878,38 @@ h2 {
   justify-content: center;
   color: whitesmoke;
   font-size: 25px;
+  border: 2px solid white;
+  border-style: dashed;
 }
 
 .cbox1 {
   background-color: #ff5722;
+  box-shadow: 0px 0px 25px #ff5722;
 }
 
 .cbox2 {
   background-color: #f69d39;
+  box-shadow: 0px 0px 25px #f69d39;
 }
 
 .cbox3 {
   background-color: #6fcf97;
+  box-shadow: 0px 0px 25px #6fcf97;
 }
 
 .cbox4 {
   background-color: #e4d329;
+  box-shadow: 0px 0px 25px #e4d329;
 }
 
 .cbox5 {
   background-color: #e0c375;
+  box-shadow: 0px 0px 25px #e0c375;
 }
 
 .cbox6 {
   background-color: #4bb8fa;
+  box-shadow: 0px 0px 25px #4bb8fa;
 }
 
 /* Time table page */
@@ -992,13 +1001,14 @@ h2 {
   min-width: 50%;
   min-height: 15vh;
   padding: 20px;
-  background-color: white;
-  border: 2px solid black;
+  background-color: var(--ann-color);
   margin-top: 20px;
   font-family: cursive;
   border-radius: 10px;
   margin-bottom: 10px;
   transition: 0.3s ease;
+  box-shadow: 0px 0px 20px var(--ann-color);
+  border: 2px solid whitesmoke;
 }
 
 .announcements h1 {
@@ -1014,10 +1024,6 @@ h2 {
 
 .announcements:hover h1 {
   color: white;
-}
-
-.announcements:hover {
-  box-shadow: 0px 0px 10px black;
 }
 
 /* Chats page   */
@@ -1064,6 +1070,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border: 2px solid whitesmoke;
 }
 
 .promenu .personwhosends {
@@ -1328,8 +1335,13 @@ h2 {
   align-items: center;
   height: 400px;
   flex-direction: column;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   box-shadow: 0px 0px 20px var(--club-color);
+  border: 2px solid whitesmoke;
+}
+
+.promenu .clubs .clubslots .clubslot:hover .clubname{
+  color: whitesmoke;
 }
 
 .clubslot .clubname {
@@ -1339,6 +1351,7 @@ h2 {
   font-size: 28px;
   font-weight: 800;
   font-family: monospace;
+  transition: 0.3s ease;
 }
 
 .clubslot .clublogobox {
@@ -1410,7 +1423,7 @@ h2 {
   font-weight: bold;
   letter-spacing: 0.05rem;
   margin-top: 20px;
-  border: 1px solid #0E1822;
+  border: 0px solid #0E1822;
   padding: 0.8rem 2.1rem;
 
   background-color: #0E1822;
@@ -1546,7 +1559,13 @@ body {
   max-width: 300px;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); */
+  box-shadow: 0px 5px 10px var(--club-color);
+  transition: 0.3s ease;
+}
+
+.card:hover{
+  color: whitesmoke;
 }
 
 .content {
@@ -1593,6 +1612,7 @@ body {
   letter-spacing: 0.05rem;
   margin-top: 20px;
   border: 2px solid #0E1822;
+  border: 2px solid var(--club-color);
   padding: 0.8rem 2.1rem;
   background-color: #0E1822;
   position: relative;
@@ -1805,7 +1825,7 @@ body {
 .container {
   position: absolute;
   inset: 0;
-  background: #fff;
+  background: #000;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1987,6 +2007,7 @@ body {
   padding: 10px;
   border-radius: 10px;
   background-color: var(--club-color);
+  box-shadow: 0px 0px 60px var(--club-color);
 }
 
 
@@ -2088,3 +2109,438 @@ body {
   }
 }
 
+/* Club FAQS */
+
+.clubfaqs{
+  width: 95%;
+  min-height: 0vh;
+  
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  flex-direction: column;
+  padding-bottom: 20px;
+  margin-left: 25px;
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--faq-color);
+}
+
+.clubfaqs .clubfaq{
+  width: 90%;
+  min-height: 10vh;
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+.clubfaqs .clubfaq h3,h2{
+  font-family: cursive;
+}
+
+.clubfaqs .clubfaq h1{
+  font-size: 42px;
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.leftclub{
+  width: 97%;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* From Uiverse.io by gharsh11032000 */
+
+.leftclub .animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 16px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 100px;
+  font-weight: 600;
+  color: var(--user-color);
+  box-shadow: 0 0 0 2px var(--user-color);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.leftclub .animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: var(--user-color);
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.leftclub .animated-button .arr-1 {
+  right: 16px;
+}
+
+.leftclub .animated-button .arr-2 {
+  left: -25%;
+}
+
+.leftclub .animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--user-color);
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.leftclub .animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.leftclub .animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: #212121;
+  border-radius: 12px;
+}
+
+.leftclub .animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.pleftclub .animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.leftclub .animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.leftclub .animated-button:hover svg {
+  fill: #212121;
+}
+
+.leftclub .animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px var(--user-color);
+}
+
+.leftclub .animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}
+
+/* Student results */
+
+.studentres{
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table-container {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.table-title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.custom-table thead {
+  background-color: #4caf50;
+  color: white;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.custom-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #e8f5e9;
+  transform: scale(1.01);
+}
+
+.custom-table th {
+  font-size: 16px;
+}
+
+.custom-table td {
+  font-size: 15px;
+  color: #333;
+}
+
+/* Student Assesments */
+
+.stuass{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Student Fees*/
+
+.stufees{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+
+.clubnots{
+  width: 93%;
+  min-height: 10vh;
+  margin-left: 10px;
+  margin-top: 20px;
+  background-color: var(--club-color);
+  border-radius: 10px;
+  justify-content: flex-start;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.clubnots .notbox{
+  min-width: 50%;
+  min-height: 10vh;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+  padding-bottom: 10px;
+  color: whitesmoke;
+}
+
+.studentwelcomepage{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.studentwelcomepage .welcomehead{
+  min-width: 30%;
+  height: 10vh;
+  background-color: black;
+  color: var(--user-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+.studentwelcomepage .imps{
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.studentwelcomepage .imps .attendancebox{
+  width: 30%;
+  height: 100%;
+  border: 2px solid black;
+  background-color: black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.studentwelcomepage .imps .imptools{
+  width: 50%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+/**/
+.card-6 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+  margin: 34px 0;
+}
+
+.card-6__holo {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 26px;
+  transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  animation: card6-wobble 6.2s ease-in-out infinite;
+}
+
+@keyframes card6-wobble {
+  0% {
+    transform: rotateX(16deg) rotateY(-18deg);
+  }
+  50% {
+    transform: rotateX(18deg) rotateY(18deg);
+  }
+  100% {
+    transform: rotateX(16deg) rotateY(-18deg);
+  }
+}
+
+.card-6__layer {
+  position: absolute;
+  font-weight: 900;
+  font-size: 108px;
+  letter-spacing: -6px;
+  line-height: 1;
+
+  -webkit-text-stroke: 1px var(--user-color);
+
+  background: linear-gradient(
+    90deg,
+    var(--user-color) 0%,
+    var(--user-color) 35%,
+    var(--user-color) 60%,
+    var(--user-color) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55));
+  opacity: 0.95;
+  transform-style: preserve-3d;
+}
+
+.card-6__layer--back {
+  opacity: 0.18;
+  filter: blur(1px);
+  transform: translateZ(-70px);
+  -webkit-text-stroke: 1px var(--user-color);
+}
+.card-6__layer--mid {
+  opacity: 0.42;
+  filter: blur(0.4px);
+  transform: translateZ(-34px);
+  -webkit-text-stroke: 1px var(--user-color);
+}
+.card-6__layer--front {
+  opacity: 0.98;
+  transform: translateZ(0px);
+  -webkit-text-stroke: 1px var(--user-color);
+}
+
+.card-6__holo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  background: radial-gradient(
+    circle at 40% 35%,
+    rgba(0, 123, 255, 0.14),
+    rgba(0, 0, 0, 0) 62%
+  );
+  filter: blur(8px);
+  opacity: 0.9;
+  transform: translateZ(-80px);
+}
+
+.card-6__holo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 26px;
+  border: 1px solid rgba(0, 123, 255, 0.16);
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.01) 45%,
+    rgba(0, 0, 0, 0)
+  );
+  opacity: 0.55;
+  transform: translateZ(-45px);
+}
+
+@media (max-width: 600px) {
+  .card-6__holo {
+    width: 128px;
+    height: 128px;
+    border-radius: 24px;
+  }
+  .card-6__layer {
+    font-size: 96px;
+    letter-spacing: -5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-6__holo {
+    animation: none !important;
+  }
+}

@@ -24,7 +24,7 @@ const Studentcourses = () => {
     <StudentLayout>
       <div className="promenu">
         <div className="userprotitle" style={{marginTop:"20px"}}>
-          <h1 style={{fontSize:"40px"}}>Courses</h1>
+          <h1 style={{fontSize:"40px",color:User.Color,fontWeight:"bolder"}}>Courses</h1>
         </div>
 
         {filteredCourses.length > 0 ? (
@@ -37,7 +37,7 @@ const Studentcourses = () => {
             >
               <div
                 className="coursedata"
-                style={{ backgroundColor: Course.Color }}
+                style={{ backgroundColor: Course.Color,"--cou-color":Course.Color}}
               >
                 <div className="blackline"></div>
                 <h1>

@@ -35,11 +35,30 @@ router.get('/getclubs',CourseController.GetClubs);
 
 router.put('/update/:id',CourseController.RegisterMember);
 
+router.put('/leave/:id', CourseController.LeftClub);
+
 // Club Chats
 
 router.post('/createclubmsg',CourseController.CreateClubmsg);
 
 router.get('/getclubmsgs',CourseController.GetClubchats);
 
+// Club FAQS
+
+router.post('/createclubfaq',CourseController.CreateClubFaqs);
+
+router.get('/getclubfaq',CourseController.GetClubFaqs);
+
+// User Results
+
+router.post("/createresult", CourseController.CreateResult);
+
+router.get("/getresult", CourseController.GetResult);
+
+// Club Notifications
+
+router.post("/createclubnots",CourseController.CreateClubnot);
+
+router.get("/getclubnots",CourseController.GetClubNots);
 
 module.exports = router;

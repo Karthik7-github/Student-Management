@@ -28,12 +28,12 @@ const Studentannouncements = () => {
       <StudentLayout>
         <div className="promenu">
           <div className="userprotitle">
-            <h1 style={{ fontSize: "40px" }}>Announcements</h1>
+            <h1 style={{ fontSize: "40px",color:User.Color}}>Announcements</h1>
           </div>
           {filterannouncements.length > 0 ? (
             filterannouncements.map((ann, index) => {
               return (
-                <div className="announcements" key={index} style={{backgroundColor:ann.Color}}>
+                <div className="announcements" key={index} style={{"--ann-color":ann.Color}}>
                   <h1>{ann.Title}</h1>
                   {ann.Content}
                   <h3>Messaged By : {ann.Author}</h3>

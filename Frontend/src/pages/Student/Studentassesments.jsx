@@ -2,9 +2,14 @@ import React from 'react'
 import StudentLayout from './StudentLayout';
 
 const Studentassesments = () => {
+
+  const User = JSON.parse(localStorage.getItem("user"));
+  
   return (
     <StudentLayout>
-        <h1>Assesments</h1>
+        <div className="stuass">
+          <h1 style={{color:User.Color}}>Assessments</h1>
+        </div>
     </StudentLayout>
   )
 }

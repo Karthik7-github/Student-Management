@@ -21,7 +21,7 @@ const Clubmembers = () => {
             Club.Members.map((event, index) => (
               <tr className="trt1s1" key={index}>
                 <td className="time1" style={{ backgroundColor: Club.Color }}>
-                  {index+1}
+                  {index + 1}
                 </td>
                 <td
                   className="subject1"
@@ -32,8 +32,9 @@ const Clubmembers = () => {
               </tr>
             ))
           ) : (
-            <h4>No Events Available</h4>
+            <h4>No Members Available</h4>
           )}
+          <h1 style={{marginLeft:"340px",marginTop:"20px",fontFamily:"cursive"}}>Total : {Club.Members.length}</h1>
         </tbody>
       </table>
     </div>

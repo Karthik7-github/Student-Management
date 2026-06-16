@@ -34,7 +34,7 @@ const Studenttimetables = () => {
     <StudentLayout>
       <div className="promenu">
         <div className="userprotitle">
-          <h1>Time Table</h1>
+          <h1 style={{color:User.Color,marginTop:"20px",fontWeight:"bolder",fontSize:"40px"}}>Time Table</h1>
         </div>
         <div className="tt">
           <table>

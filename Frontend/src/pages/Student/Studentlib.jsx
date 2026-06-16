@@ -3,14 +3,16 @@ import { Link } from "react-router-dom";
 
 const Studentlib = () => {
 
+  const User = JSON.parse(localStorage.getItem("user"));
+
   return (
     <StudentLayout>
       <div className="promenu">
         <div className="userprotitle">
-          <h1 style={{fontSize:"40px"}}>Digital Library</h1>
+          <h1 style={{fontSize:"40px",color:User.Color}}>Digital Library</h1>
         </div>
         <div className="librow">
-          <Link to="https://www.ibm.com/docs/en/ssw_ibm_i_71/sqlp/rbafy.pdf" className="course" target="parent">
+          <Link to="https://www.ibm.com/docs/en/ssw_ibm_i_71/sqlp/rbafy.pdf" className="course" target="parent" style={{"--user-color":User.Color}}>
             <div className="coursebox cbox1">
               <div className="circle">
                 <h1>SQL</h1>

@@ -48,7 +48,7 @@ const StudentClubstoregister = () => {
 
       const data = await res.json();
       console.log(data);
-      setRefresh((prev)=>!prev)
+      setRefresh((prev) => !prev);
     } catch (err) {
       console.log(err);
     }
@@ -63,6 +63,7 @@ const StudentClubstoregister = () => {
               fontSize: "40px",
               marginTop: "20px",
               fontFamily: "cursive",
+              color: User.Color,
             }}
           >
             Clubs
@@ -154,7 +155,6 @@ const StudentClubstoregister = () => {
               }}
             />
             <label htmlFor="value-6">Arts</label>
-
           </div>
         </div>
         <div className="clubs">
@@ -163,7 +163,10 @@ const StudentClubstoregister = () => {
               <div
                 className="card"
                 key={index}
-                style={{ border: `2px solid ${Club.Color}` }}
+                style={{
+                  border: `2px solid ${Club.Color}`,
+                  "--club-color": Club.Color,
+                }}
               >
                 <div className="image" style={{ backgroundColor: Club.Color }}>
                   <h1 style={{ fontSize: "38px" }}>{Club.ClubName}</h1>
