@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 const Clubdashboard = () => {
   const Club = JSON.parse(localStorage.getItem("Club"));
 
+  const back = () =>{
+    localStorage.removeItem("Club");
+  }
+
+  
+
   return (
     <div className="Clubnavbar">
       <div className="firstline">
@@ -30,7 +36,7 @@ const Clubdashboard = () => {
                 "--club-color": Club.Color,
               }}
             >
-              <button>
+              <button onClick={back}>
                 <span class="text">Go Back</span>
                 <span>Thanks!</span>
               </button>

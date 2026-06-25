@@ -2546,5 +2546,131 @@ body {
 }
 
 .welcomenots{
-  background-color: #fff;
+  width: 90%;
+  min-height: 40vh;
+  border: 5px solid var(--user-color);
+  border-radius: 10px;
+}
+
+.welcomenots .notboxwel{
+  min-width: 30%;
+  min-height: 10vh;
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: yellow;
+}
+
+.welcomenots {
+  width: 90%;
+  margin: auto;
+  min-height: 40vh;
+  border: 4px solid var(--user-color);
+  border-radius: 12px;
+  padding: 20px;
+  background: #0f172a; /* dark modern background */
+}
+
+/* Titles */
+.section-title {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.sub-title {
+  color: #cbd5e1;
+  margin: 20px 0 10px;
+}
+
+/* Container Grid */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* EVENT CARD */
+.notboxwel {
+  flex: 1 1 280px;
+  max-width: 320px;
+  min-height: 150px;
+  padding: 18px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: all 0.25s ease;
+}
+
+.notboxwel:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+/* Header */
+.not-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.club-id {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.event-time {
+  font-style: italic;
+}
+
+/* Content */
+.event-name {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.event-desc {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.announcement-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+  background: linear-gradient(135deg, var(--ann-color), #1e293b);
+  padding: 18px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.announcement-card h3 {
+  margin-bottom: 8px;
+}
+
+.author {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+/* Empty State */
+.no-events {
+  color: #94a3b8;
+  padding: 10px;
+}
+
+.welcomenots {
+  width: 90%;
+  margin: auto;
+  border: 4px solid var(--user-color);
+  border-radius: 12px;
+  padding: 20px;
+  background: #0f172a;
+
+  /* 🔥 KEY FIX */
+  height: auto;
+  min-height: unset;
 }
