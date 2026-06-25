@@ -228,7 +228,7 @@ async function LeftClub(req, res) {
             id,
             {
                 $pull: {
-                    Members: { MemberName: MemberName }  // remove matching member
+                    Members: { MemberName: MemberName }  
                 }
             },
             { new: true }
