@@ -24,7 +24,7 @@ const Studentclubs = () => {
       });
   }, []);
 
-  const username = User.Name;
+  const username = User.StudentID;
 
   const filteredclubs = club.filter((c) =>
     c.Members?.some((m) => m.MemberName === username),

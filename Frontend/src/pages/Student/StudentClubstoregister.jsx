@@ -26,7 +26,7 @@ const StudentClubstoregister = () => {
       });
   }, [refresh]);
 
-  const username = User.Name;
+  const username = User.StudentID;
 
   const filteredclubs = club.filter(
     (c) =>
