@@ -43,8 +43,7 @@ const Studentclubs = () => {
             style={{
               fontSize: "40px",
               marginTop: "20px",
-              fontFamily: "cursive",
-              color:User.Color
+              fontFamily: "cursive"
             }}
           >
             Registered Clubs

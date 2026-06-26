@@ -93,7 +93,7 @@ const Studentwelcome = () => {
                 <div
                   className="notboxwel"
                   key={index}
-                  style={{ background: nots.Color }}
+                  style={{ background: `linear-gradient(135deg, ${nots.Color}, #1e293b)`}}
                 >
                   <div className="not-header">
                     <span className="club-id">{nots.ClubID}</span>

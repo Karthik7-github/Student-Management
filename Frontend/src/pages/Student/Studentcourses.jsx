@@ -22,9 +22,9 @@ const Studentcourses = () => {
 
   return (
     <StudentLayout>
-      <div className="promenu">
+      <div className="promenu" style={{backgroundColor:"black"}}>
         <div className="userprotitle" style={{marginTop:"20px"}}>
-          <h1 style={{fontSize:"40px",color:User.Color,fontWeight:"bolder"}}>Courses</h1>
+          <h1 style={{fontSize:"40px",fontWeight:"bolder"}}>Courses</h1>
         </div>
 
         {filteredCourses.length > 0 ? (
@@ -47,7 +47,7 @@ const Studentcourses = () => {
             </a>
           ))
         ) : (
-          <h1 style={{margin:"100px 0px 0px 350px"}}>No Courses Found</h1>
+          <h1 style={{margin:"100px 0px 0px 350px",color:"white"}}>No Courses Found</h1>
         )}
       </div>
     </StudentLayout>

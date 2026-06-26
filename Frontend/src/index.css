@@ -799,10 +799,9 @@ h2 {
 /* Course page */
 
 .promenu .coursedata {
-  width: 80%;
+  width: 95%;
   height: 12vh;
   margin-top: 20px;
-  background-color: skyblue;
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -810,7 +809,7 @@ h2 {
   box-shadow: 2px 0px 10px black;
   transition: 0.3s ease;
   border: 2px solid transparent;
-  box-shadow: 0px 0px 20px var(--cou-color);
+  box-shadow: 0px 0px 10px var(--cou-color);
   border: 2px solid white;
 }
 
@@ -838,15 +837,17 @@ h2 {
 /* Digital Library Page */
 
 .promenu .librow {
-  width: 100%;
+  width: 98%;
   height: 60%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: black;
+  padding: 10px;
 }
 
 .promenu .librow .course {
-  width: 30%;
+  width: 25%;
   height: 90%;
 }
 
@@ -862,6 +863,7 @@ h2 {
   font-size: small;
   transition: 0.3s ease;
   border: 2px solid white;
+  padding: 10px;
 }
 
 .course:hover {
@@ -884,44 +886,46 @@ h2 {
 
 .cbox1 {
   background-color: #ff5722;
-  box-shadow: 0px 0px 25px #ff5722;
+  box-shadow: 0px 0px 10px #ff5722;
 }
 
 .cbox2 {
   background-color: #f69d39;
-  box-shadow: 0px 0px 25px #f69d39;
+  box-shadow: 0px 0px 10px #f69d39;
 }
 
 .cbox3 {
   background-color: #6fcf97;
-  box-shadow: 0px 0px 25px #6fcf97;
+  box-shadow: 0px 0px 10px #6fcf97;
 }
 
 .cbox4 {
   background-color: #e4d329;
-  box-shadow: 0px 0px 25px #e4d329;
+  box-shadow: 0px 0px 10px #e4d329;
 }
 
 .cbox5 {
   background-color: #e0c375;
-  box-shadow: 0px 0px 25px #e0c375;
+  box-shadow: 0px 0px 10px #e0c375;
 }
 
 .cbox6 {
   background-color: #4bb8fa;
-  box-shadow: 0px 0px 25px #4bb8fa;
+  box-shadow: 0px 0px 10px #4bb8fa;
 }
 
 /* Time table page */
 
 .promenu .tt {
-  width: 100%;
-  height: 90%;
-  background-color: white;
+  width: 92%;
+  min-height: 20vh;
+  background-color: black;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   margin-top: 20px;
+  padding: 40px;
+  border-radius: 50px;
 }
 
 .tt table {
@@ -971,6 +975,7 @@ h2 {
   font-family: cursive;
   font-size: 22px;
   transition: 0.2s ease;
+  box-shadow: 0px 0px 7px var(--tt-color);
 }
 
 .tt .subject1 {
@@ -985,6 +990,7 @@ h2 {
   font-family: cursive;
   font-size: 22px;
   transition: 0.2s ease;
+  box-shadow: 0px 0px 7px var(--tt-color);
 }
 
 .tt .trt1s1:hover .subject1 {
@@ -1000,6 +1006,7 @@ h2 {
 .promenu .announcements {
   min-width: 50%;
   min-height: 15vh;
+  max-width: 90%;
   padding: 20px;
   background-color: var(--ann-color);
   margin-top: 20px;
@@ -1007,8 +1014,9 @@ h2 {
   border-radius: 10px;
   margin-bottom: 10px;
   transition: 0.3s ease;
-  box-shadow: 0px 0px 20px var(--ann-color);
-  border: 2px solid whitesmoke;
+  box-shadow: 0px 0px 5px black;
+  border: 2px solid black;
+  margin-left: 20px;
 }
 
 .announcements h1 {
@@ -1104,6 +1112,7 @@ h2 {
   padding: 10px 15px;
   margin: 5px 0;
   background-color: skyblue;
+  border: 2px solid white;
   border-radius: 12px;
   word-wrap: break-word;
 }
@@ -1325,6 +1334,7 @@ h2 {
   gap: 20px;
   padding: 20px;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .promenu .clubs .clubslots .clubslot {
@@ -1335,9 +1345,9 @@ h2 {
   align-items: center;
   height: 400px;
   flex-direction: column;
-  /* border: 2px solid black; */
-  box-shadow: 0px 0px 20px var(--club-color);
-  border: 2px solid whitesmoke;
+  border: 2px solid var(--club-color);
+  box-shadow: 0px 0px 10px var(--club-color);
+  
 }
 
 .promenu .clubs .clubslots .clubslot:hover .clubname{
@@ -2601,6 +2611,7 @@ body {
   color: white;
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
   transition: all 0.25s ease;
+  border: 2px solid whitesmoke;
 }
 
 .notboxwel:hover {
@@ -2676,3 +2687,4 @@ body {
   height: auto;
   min-height: unset;
 }
+

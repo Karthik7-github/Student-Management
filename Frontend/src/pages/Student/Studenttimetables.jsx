@@ -34,7 +34,7 @@ const Studenttimetables = () => {
     <StudentLayout>
       <div className="promenu">
         <div className="userprotitle">
-          <h1 style={{color:User.Color,marginTop:"20px",fontWeight:"bolder",fontSize:"40px"}}>Time Table</h1>
+          <h1 style={{marginTop:"20px",fontWeight:"bolder",fontSize:"40px"}}>Time Table</h1>
         </div>
         <div className="tt">
           <table>
@@ -53,13 +53,13 @@ const Studenttimetables = () => {
                 Filterschedule.map((schedule, index) =>
                   schedule.Schedule.map((sub, i) => (
                     <tr key={`${index}-${i}`} className="trt1s1">
-                      <td className="time1" style={{backgroundColor:`${Subcolors[sub.Subject]}`}}>{sub.Time}</td>
-                      <td className="subject1" style={{backgroundColor:`${Subcolors[sub.Subject]}`}}>{sub.Subject}</td>
+                      <td className="time1" style={{"--tt-color":`${Subcolors[sub.Subject]}`,backgroundColor:`${Subcolors[sub.Subject]}`}}>{sub.Time}</td>
+                      <td className="subject1" style={{"--tt-color":`${Subcolors[sub.Subject]}`,backgroundColor:`${Subcolors[sub.Subject]}`}}>{sub.Subject}</td>
                     </tr>
                   )),
                 )
               ) : (
-                <h1 style={{margin:"100PX 0PX 0PX 300PX"}}>NO SHEDULE</h1>
+                <h1 style={{margin:"100PX 0PX 0PX 300PX",color:"white"}}>NO SHEDULE</h1>
               )}
             </tbody>
           </table>

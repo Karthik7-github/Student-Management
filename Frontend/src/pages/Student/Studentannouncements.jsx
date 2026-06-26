@@ -28,7 +28,7 @@ const Studentannouncements = () => {
       <StudentLayout>
         <div className="promenu">
           <div className="userprotitle">
-            <h1 style={{ fontSize: "40px",color:User.Color}}>Announcements</h1>
+            <h1 style={{ fontSize: "40px"}}>Announcements</h1>
           </div>
           {filterannouncements.length > 0 ? (
             filterannouncements.map((ann, index) => {
@@ -41,7 +41,7 @@ const Studentannouncements = () => {
               );
             })
           ) : (
-            <h1 style={{margin:"100px 0px 0px 350px"}}>No Announcements</h1>
+            <h1 style={{margin:"100px 0px 0px 350px",color:"white"}}>No Announcements</h1>
           )}
         </div>
       </StudentLayout>
