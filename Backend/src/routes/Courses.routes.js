@@ -61,4 +61,10 @@ router.post("/createclubnots",CourseController.CreateClubnot);
 
 router.get("/getclubnots",CourseController.GetClubNots);
 
+//Attendance
+
+router.post("/postattend",CourseController.PostAttendance);
+
+router.get('/getattend',CourseController.GetAttendance);
+
 module.exports = router;

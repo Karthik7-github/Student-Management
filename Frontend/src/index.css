@@ -2427,6 +2427,9 @@ body {
   height: 100%;
   border-radius: 10px;
   background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 /* From Uiverse.io by SouravBandyopadhyay */ 
@@ -2794,5 +2797,9 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   min-height: unset;
 }
 
-
+.imptools .meter{
+  width: 250px;
+  height: 90%;
+  background-color: #fff;
+}
 

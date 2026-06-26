@@ -94,7 +94,80 @@ const Studentwelcome = () => {
     return currentTime >= startTime && currentTime < endTime;
   });
 
-  console.log(announcement)
+  console.log(announcement);
+
+  const radius = 90;
+  const circumference = Math.PI * radius;
+
+  const [attend, setAttend] = useState({});
+  // const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/course/getattend")
+      .then((res) => {
+        setAttend(res.data.Attendance[0]); // ✅ important
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
+  const target = attend?.Present || 0;
+
+  // ✅ SMOOTH animation (important fix)
+  useEffect(() => {
+    let start = 0;
+    let duration = 1500; // animation time (1.5 sec)
+    let startTime = null;
+
+    const animate = (time) => {
+      if (!startTime) startTime = time;
+      const progress = time - startTime;
+
+      const percentage = Math.min(progress / duration, 1);
+      const currentValue = Math.floor(percentage * target);
+
+      setValue(currentValue);
+
+      if (percentage < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    if (target > 0) {
+      requestAnimationFrame(animate);
+    }
+  }, [target]);
+
+  
+
+  const [value, setValue] = useState(0);
+
+  useEffect(() => {
+    let startTime = null;
+    const duration = 2000; // 🔥 slower = smoother
+
+    const animate = (time) => {
+      if (!startTime) startTime = time;
+      const progress = Math.min((time - startTime) / duration, 1);
+
+      // ✅ easeOutCubic (VERY SMOOTH)
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      const current = ease * target;
+      setValue(current);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    if (target > 0) {
+      requestAnimationFrame(animate);
+    }
+  }, [target]);
+  
+   const progress = value / 100;
+  const strokeDashoffset = circumference - progress * circumference;
 
   return (
     <StudentLayout>
@@ -119,7 +192,7 @@ const Studentwelcome = () => {
 
           {/* UPCOMING CLASSES */}
           <div className="imptools">
-            <div className="card" style={{"--user-color":User.Color}}>
+            <div className="card" style={{ "--user-color": User.Color }}>
               <p className="card-title">Upcoming Classes</p>
               <div className="small-desc">
                 {currentClass && (
@@ -140,6 +213,34 @@ const Studentwelcome = () => {
 
               <div className="go-corner">
                 <div className="go-arrow">→</div>
+              </div>
+            </div>
+            <div className="meter">
+              <div style={{ textAlign: "center", marginTop: "50px" }}>
+                <svg width="220" height="120">
+                  {/* background */}
+                  <path
+                    d="M 10 100 A 90 90 0 0 1 210 100"
+                    fill="none"
+                    stroke="#ddd"
+                    strokeWidth="15"
+                  />
+
+                  {/* progress */}
+                  <path
+                    d="M 10 100 A 90 90 0 0 1 210 100"
+                    fill="none"
+                    stroke="lime"
+                    strokeWidth="15"
+                    strokeDasharray={circumference}
+                    strokeDashoffset={strokeDashoffset}
+                    style={{
+                      transition: "stroke-dashoffset 0.5s ease-out", // 🔥 smoother
+                    }}
+                  />
+                </svg>
+
+                <h2>{Math.round(progress * 100)}%</h2>
               </div>
             </div>
           </div>
@@ -170,7 +271,7 @@ const Studentwelcome = () => {
                 </div>
               ))
             ) : (
-              <p>No Active Events</p>
+              <p style={{ color: "white" }}>No Active Events</p>
             )}
           </div>
 
@@ -179,14 +280,20 @@ const Studentwelcome = () => {
           <div className="cards-container">
             {filterannouncements.length > 0 ? (
               filterannouncements.map((ann, index) => (
-                <div key={index} className="announcement-card" style={{background: `linear-gradient(135deg, ${ann.Color}, #1e293b)`}}>
+                <div
+                  key={index}
+                  className="announcement-card"
+                  style={{
+                    background: `linear-gradient(135deg, ${ann.Color}, #1e293b)`,
+                  }}
+                >
                   <h3>{ann.Title}</h3>
                   <p>{ann.Content}</p>
                   <span>— {ann.Author}</span>
                 </div>
               ))
             ) : (
-              <p>No Announcements</p>
+              <p style={{ color: "white" }}>No Announcements</p>
             )}
           </div>
         </div>

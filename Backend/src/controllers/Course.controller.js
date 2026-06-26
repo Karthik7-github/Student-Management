@@ -7,6 +7,7 @@ const ClubchatModel = require('../models/ClubChat.model');
 const ClubFaqsModel = require('../models/ClubFaq.model.js');
 const ResultModel = require('../models/Results.model.js');
 const ClubNotification = require('../models/ClubNotifications.model.js');
+const AttendanceModel = require('../models/Attendance.model.js');
 //  Courses
 
 
@@ -399,8 +400,33 @@ async function GetClubNots(req,res) {
     })
 }
 
+async function PostAttendance(req,res) {
+    const {ID,Present,Total} = req.body;
+
+    const Attendance = await AttendanceModel.create({
+        ID,Present,Total
+    });
+
+    res.status(201).json({
+        Message : "Attendance Posted",
+        Attendance : Attendance
+    });
+}
+
+async function GetAttendance(req,res) {
+    const Attendance = await AttendanceModel.find();
+
+    res.status(200).json({
+        Message : "Attendace fetched",
+        Attendance : Attendance
+    })
+}
+
+
+
 module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
     CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
-    CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots
+    CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots,
+    PostAttendance, GetAttendance
 };
