@@ -22,6 +22,7 @@ import Clubchat from "../src/pages/Clubs/ClubChat";
 import Clubmembers from "../src/pages/Clubs/Clubmembers";
 import Clubhome from "./pages/Clubs/Clubhome";
 import Clubfaq from "./pages/Clubs/Clubfaq";
+import Studentedit from "./pages/components/StudentEditingpage";
 
 const App = () => {
   return (
@@ -45,8 +46,9 @@ const App = () => {
         <Route path="/student/library" element={<Studentlib />} />
         <Route path="/student/profile" element={<Studentpro />} />
         <Route path="/student/clubstoregister" element={<Studentclubres />} />
+        <Route path="/student/edit" element={<Studentedit/>}/>
         <Route path="/club" element={<Clubroom />}>
-          <Route index element={<Clubhome />} />   {/* 🔥 DEFAULT PAGE */}
+          <Route index element={<Clubhome />} />
           <Route path="home" element={<Clubhome />} />
           <Route path="chat" element={<Clubchat />} />
           <Route path="mems" element={<Clubmembers />} />

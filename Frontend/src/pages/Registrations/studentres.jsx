@@ -68,7 +68,7 @@ const studentres = () => {
             ></i>
             <h1 style={{ color: "#fbca1f" }}>Registration Successfully</h1>
             <Link to="/Login">
-              <button>Button</button>
+              <button>Login Now</button>
             </Link>
           </div>
         </div>
