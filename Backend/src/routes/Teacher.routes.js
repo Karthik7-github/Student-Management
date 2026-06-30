@@ -9,4 +9,6 @@ router.post('/login',Teachercontroller.Login);
 
 router.post('/logout',Teachercontroller.Logout);
 
+router.put('/stuedit/:id', Teachercontroller.Editstudata);
+
 module.exports = router;

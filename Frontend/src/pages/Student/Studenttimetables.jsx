@@ -26,7 +26,7 @@ const Studenttimetables = () => {
     'Compiler Design':'#4BB8FA'
   }
 
-  const Filterschedule = shedule.filter((c) => c.Grade === User.Class);
+  const Filterschedule = shedule.filter((c) => String(c.Grade) === User.Class);
 
   console.log(Filterschedule);
 

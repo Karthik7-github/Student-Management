@@ -20,7 +20,7 @@ const Studentannouncements = () => {
   }, []);
 
   const filterannouncements = announcement.filter(
-    (c)=> c.Grade===User.Class || c.Grade===0
+    (c)=> String(c.Grade)===User.Class || c.Grade===0
   );
 
   return (

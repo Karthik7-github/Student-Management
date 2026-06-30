@@ -2803,3 +2803,49 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   background-color: #fff;
 }
 
+.topbackedit{
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+  background-color: black;
+}
+
+.topbackedit .editblock{
+  width: 80%;
+  height: 10vh;
+  background-color: transparent;
+  margin-top: 20px;
+  display: flex;
+}
+
+.topbackedit .editblock .input{
+  background-color: transparent;
+  min-width: 350px;
+  padding: 10px;
+  height: 20px;
+  margin-left: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid var(--user-color);
+}
+
+.topbackedit .btnsave{
+  background-color: var(--user-color);
+  width: 100px;
+  height: 30px;
+  border: 2px solid white;
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.topbackedit .btssavenext{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 400px;
+  height: 70px;
+}

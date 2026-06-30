@@ -105,4 +105,30 @@ async function Logout(req, res) {
     res.status(200).json({ message: "User logged out successfully" })
 }
 
-module.exports = { TeacherRegister, Login, Logout };
+async function Editstudata(req, res) {
+    try {
+        const StudentID = req.params.id;
+
+        const { Name, Age, DOB, Class } = req.body;
+
+        const updatedStudent = await Studentmodel.findOneAndUpdate(
+            { StudentID: StudentID },
+            { Name, Age, DOB, Class },
+            { new: true }
+        );
+
+        if (!updatedStudent) {
+            return res.status(404).json({ message: "Student not found" });
+        }
+
+        res.status(200).json({
+            message: "Student updated successfully",
+            data: updatedStudent
+        });
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+module.exports = { TeacherRegister, Login, Logout, Editstudata };

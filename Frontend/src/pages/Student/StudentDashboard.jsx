@@ -27,13 +27,13 @@ const Studentdashboard = () => {
           backgroundColor: User.Color,
         }}
       >
-        <Link to='/student/profile' className="profilelink">
+        <Link to='/studentwelcome' className="profilelink">
           <div className="profilebox">
             <h1 style={{ color: User.Color }}>{User.Name[0]}</h1>
           </div>
         </Link>
-        <Link to="/studentwelcome">
-          <h1>{User?.Name}</h1>
+        <Link to="/student/profile">
+          <h1>{User?.Name}<i class="fa-solid fa-user"></i></h1>
         </Link>
       </div>
       <div
