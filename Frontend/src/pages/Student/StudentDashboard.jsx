@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Studentdashboard = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -27,13 +28,16 @@ const Studentdashboard = () => {
           backgroundColor: User.Color,
         }}
       >
-        <Link to='/studentwelcome' className="profilelink">
+        <Link to="/studentwelcome" className="profilelink">
           <div className="profilebox">
             <h1 style={{ color: User.Color }}>{User.Name[0]}</h1>
           </div>
         </Link>
         <Link to="/student/profile">
-          <h1>{User?.Name}<i class="fa-solid fa-user"></i></h1>
+          <h1>
+            {User?.Name}
+            <i class="fa-solid fa-user"></i>
+          </h1>
         </Link>
       </div>
       <div
@@ -41,107 +45,64 @@ const Studentdashboard = () => {
         style={{
           backgroundColor: User?.Color,
           borderRight: `2px solid transparent`,
+          "--user-color":User.Color
         }}
       >
-        <Link to="/student/courses">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Courses</h3>
-          </div>
-        </Link>
-        <Link to="/student/timetables">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Time Table</h3>
-          </div>
-        </Link>
-        <Link to="/student/results">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Results</h3>
-          </div>
-        </Link>
-        <Link to="/student/assesments">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Assesments</h3>
-          </div>
-        </Link>
-        <Link to="/student/fees">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Fees</h3>
-          </div>
-        </Link>
-        <Link to="/student/clubs">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Clubs</h3>
-          </div>
-        </Link>
-        <Link to="/student/announcements">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Announcements</h3>
-          </div>
-        </Link>
-        <Link to="/student/chat">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Chat</h3>
-          </div>
-        </Link>
-        <Link to="/student/library">
-          <div
-            className="link"
-            style={{
-              color: User.Color,
-              borderBottom: `2px solid ${User.Color}`,
-            }}
-          >
-            <h3>Digital Library</h3>
-          </div>
-        </Link>
+        <NavLink
+          to="/student/courses"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Courses</h3>
+        </NavLink>
+        <NavLink
+          to="/student/timetables"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Time Table</h3>
+        </NavLink>
+        <NavLink
+          to="/student/results"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Results</h3>
+        </NavLink>
+        <NavLink
+          to="/student/assesments"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Assesments</h3>
+        </NavLink>
+        <NavLink
+          to="/student/fees"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Fees</h3>
+        </NavLink>
+        <NavLink
+          to="/student/clubs"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Clubs</h3>
+        </NavLink>
+        <NavLink
+          to="/student/announcements"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Announcements</h3>
+        </NavLink>
+        <NavLink
+          to="/student/chat"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Chats</h3>
+        </NavLink>
+        <NavLink
+          to="/student/library"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Library</h3>
+        </NavLink>
+        
       </div>
       <div
         className="userfooter"

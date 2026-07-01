@@ -17,7 +17,7 @@ const Studentcourses = () => {
 
 
   const filteredCourses = course.filter(
-    (c) => String(c.Class) === User.Class
+    (c) => c.Class === User.Class
   );
 
   return (

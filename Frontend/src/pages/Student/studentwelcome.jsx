@@ -71,7 +71,7 @@ const Studentwelcome = () => {
 
   // 🔥 FILTER ANNOUNCEMENTS
   const filterannouncements = announcement.filter(
-    (c) => String(c.Grade) === User.Class || c.Grade === 0,
+    (c) => c.Grade === User.Class || c.Grade === 0,
   );
 
   // 🔥 FILTER SCHEDULE
