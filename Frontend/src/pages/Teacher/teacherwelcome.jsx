@@ -1,9 +1,11 @@
-import React from 'react'
+import TeacherLayout from './TeacherLayout';
 
 const teacherwelcome = () => {
   return (
-    <div>teacherwelcome</div>
+    <TeacherLayout>
+      <h1>Teacher</h1>
+    </TeacherLayout>
   )
 }
 
-export default teacherwelcome
+export default teacherwelcome;

@@ -24,6 +24,16 @@ import Clubhome from "./pages/Clubs/Clubhome";
 import Clubfaq from "./pages/Clubs/Clubfaq";
 import Studentedit from "./pages/components/StudentEditingpage";
 
+//Teachers
+
+import TeacherLib from "./pages/Teacher/Teacherlbrary";
+import TeacherCourses from "./pages/Teacher/TeacherCourses";
+import TeacherTt from "./pages/Teacher/TeacherTimetable";
+import Coursehome from "./pages/Teacher/Courses/Coursehome";
+import Courselaunch from "./pages/Teacher/Courses/Courselaunch";
+import Courseremove from "./pages/Teacher/Courses/Courseremove";
+import Coursemine from './pages/Teacher/Courses/Couresemin'
+
 const App = () => {
   return (
     <div>
@@ -46,7 +56,7 @@ const App = () => {
         <Route path="/student/library" element={<Studentlib />} />
         <Route path="/student/profile" element={<Studentpro />} />
         <Route path="/student/clubstoregister" element={<Studentclubres />} />
-        <Route path="/student/edit" element={<Studentedit/>}/>
+        <Route path="/student/edit" element={<Studentedit />} />
         <Route path="/club" element={<Clubroom />}>
           <Route index element={<Clubhome />} />
           <Route path="home" element={<Clubhome />} />
@@ -54,7 +64,15 @@ const App = () => {
           <Route path="mems" element={<Clubmembers />} />
           <Route path="faq" element={<Clubfaq />} />
         </Route>
-
+        <Route path="/teacher/courses" element={<TeacherCourses />}>
+          <Route index element={<Coursehome />} />
+          <Route path="home" element={<Coursehome />} />
+          <Route path="launch" element={<Courselaunch />} />
+          <Route path="remove" element={<Courseremove />} />
+          <Route path="mine" element={<Coursemine />} />
+        </Route>
+        <Route path="/teacher/library" element={<TeacherLib />} />
+        <Route path="/teacher/timetables" element={<TeacherTt />} />
       </Routes>
     </div>
   );

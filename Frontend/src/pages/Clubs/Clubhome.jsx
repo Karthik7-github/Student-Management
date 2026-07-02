@@ -8,7 +8,7 @@ const Clubhome = () => {
 
   const [refresh, setRefresh] = useState(false);
 
-  const username = User?.Name;
+  const username = User?.StudentID;
 
   const handlesubmit = async (id) => {
     try {
