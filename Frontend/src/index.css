@@ -2997,6 +2997,18 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   justify-content: space-evenly;
   flex-direction: column;
   text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.coursehome .crow .cbox:hover{
+  background-color: #302e2e;
+  color: white;
+  border-color: var(--cou-color);
+}
+
+.coursehome .crow .cbox:hover .coucir{
+  background-color: #fff;
+  border-color: var(--cou-color);
 }
 
 .coursehome .crow .cbox .coucir{
