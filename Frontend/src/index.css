@@ -2920,16 +2920,19 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   padding: 0.5em;
 }
 
-.courselayout .maincoursedraft .btn {
+.courselayout .maincoursedraft .btn{
   padding: 0.5em 1.5em;
   color: #fff;
   cursor: pointer;
   transition: 0.1s;
 }
 
-.courselayout .maincoursedraft .btn:hover {
-  background: var(--user-color);
-  color: black;
+.courselayout .maincoursedraft .btn .clink{
+  color: var(--user-color);
+}
+
+.courselayout .maincoursedraft .btn .clink.active{
+  color: greenyellow;
 }
 
 .courselayout .maincoursedraft .btn:nth-child(1):hover ~ svg .rect {

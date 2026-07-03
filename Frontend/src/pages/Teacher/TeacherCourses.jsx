@@ -1,5 +1,5 @@
 import TeacherLayout from "./TeacherLayout";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const TeacherCourses = () => {
 
@@ -11,17 +11,17 @@ const TeacherCourses = () => {
         <div className="maincoursedraft" style={{"--user-color":User.Color}}>
           <div class="nav">
             <div class="container">
-              <div class="btn">
-                <Link to="home" style={{color:User.Color}}>Home</Link>
+              <div className="btn" style={{"--user-color":User.Color}}>
+                <NavLink className="clink" to="home">Home</NavLink>
               </div>
-              <div class="btn">
-                <Link to="launch" style={{color:User.Color}}>Launch</Link>
+              <div className="btn">
+                <NavLink className="clink" to="launch">Launch</NavLink>
               </div>
-              <div class="btn">
-                <Link to="remove" style={{color:User.Color}}>Remove</Link>
+              <div className="btn">
+                <NavLink className="clink" to="remove">Remove</NavLink>
               </div>
-              <div class="btn">
-                <Link to="mine" style={{color:User.Color}}>Remove</Link>
+              <div className="btn">
+                <NavLink className="clink" to="mine">My_Store</NavLink>
               </div>
               <svg
                 class="outline"
