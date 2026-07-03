@@ -2970,7 +2970,7 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   margin-left: 25px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -3024,5 +3024,97 @@ background: linear-gradient(135deg, #364a60, #384c6c);
 
 *{
   font-style: italic;
+}
+
+/* Course Launch */
+
+.launchins{
+  width: 100%;
+  height: 20vh;
+  border: 2px solid transparent;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.launchins .firsthalf{
+  width: 40%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  
+}
+
+.launchins .firsthalf label{
+  background-color: var(--user-color);
+  padding: 4px;
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.launchins .firsthalf:hover label{
+   box-shadow: 10px 10px 0px black;
+}
+
+.launchins .firsthalf input{
+  border: 2px solid var(--user-color);
+  width: 100%;
+  height: 20px;
+  padding: 10px;
+  font-size: large;
+  transition: 0.3s ease;
+}
+
+.launchins .firsthalf input:hover{
+  box-shadow: 10px 10px 0px var(--user-color);
+}
+
+/* From Uiverse.io by e-coders */ 
+.launchins button {
+ appearance: none;
+ background-color: transparent;
+ /* border: 0.125em solid #1A1A1A; */
+ border-radius: 0.9375em;
+ box-sizing: border-box;
+ color: #3B3B3B;
+ cursor: pointer;
+ display: inline-block;
+ font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+ font-size: 16px;
+ font-weight: 600;
+ line-height: normal;
+ margin: 0;
+ min-height: 3.75em;
+ min-width: 0;
+ outline: none;
+ background-color: var(--user-color);
+ padding: 1em 2.3em;
+ text-align: center;
+ text-decoration: none;
+ transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+ user-select: none;
+ -webkit-user-select: none;
+ touch-action: manipulation;
+ will-change: transform;
+}
+
+.launchins button:disabled {
+ pointer-events: none;
+}
+
+.launchins button:hover {
+ color: #fff;
+ background-color: var(--user-color);
+ box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+ transform: translateY(-2px);
+}
+
+.launchins button:active {
+ box-shadow: none;
+ transform: translateY(0);
 }
 

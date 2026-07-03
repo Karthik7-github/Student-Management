@@ -8,8 +8,9 @@ const ClubFaqsModel = require('../models/ClubFaq.model.js');
 const ResultModel = require('../models/Results.model.js');
 const ClubNotification = require('../models/ClubNotifications.model.js');
 const AttendanceModel = require('../models/Attendance.model.js');
-//  Courses
 
+
+//  Courses
 
 async function CreateCourse(req, res) {
 
@@ -51,6 +52,31 @@ async function Getcourss(req, res) {
         'Message': "Get All Courses",
         Course: Courses
     })
+}
+
+async function Removecourse(req, res) {
+    try {
+        const { Code, Class } = req.body;
+
+        const course = await CourseModel.findOneAndDelete({ Code, Class });
+
+        if (!course) {
+            return res.status(404).json({
+                Message: "Course not found"
+            });
+        }
+
+        res.status(200).json({
+            Message: "Course removed successfully",
+            Course: course
+        });
+
+    } catch (err) {
+        res.status(500).json({
+            Message: "Error removing course",
+            Error: err.message
+        });
+    }
 }
 
 //   Time tables
@@ -447,5 +473,5 @@ module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
     CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
     CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots,
-    PostAttendance, GetAttendance
+    PostAttendance, GetAttendance,Removecourse
 };

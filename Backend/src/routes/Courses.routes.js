@@ -9,6 +9,8 @@ router.post('/createcourse',CourseController.CreateCourse);
 
 router.get('/getcourses',CourseController.Getcourss);
 
+router.post('/removecourse',CourseController.Removecourse);
+
 // Time Tables
 
 router.post('/createschedule', CourseController.Createschedule);
