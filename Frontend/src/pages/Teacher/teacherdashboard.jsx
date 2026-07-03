@@ -52,7 +52,7 @@ const teacherdashboard = () => {
         }}
       >
         <NavLink
-          to="/teacher/courses"
+          to="/teacher/courses/"
           className={({ isActive }) => (isActive ? "link active" : "link")}
         >
           <h3>Courses</h3>

@@ -13,7 +13,26 @@ const AttendanceModel = require('../models/Attendance.model.js');
 
 async function CreateCourse(req, res) {
 
-    const { Name, Code, Color, Link, Class } = req.body;
+    const { Name, Code, Link, Class } = req.body;
+
+    const Color1 = [
+        '#FF3CAC', // neon pink
+        '#784BA0', // rich purple
+        '#2B86C5', // bright blue
+        '#00F5D4', // aqua neon
+        '#F15BB5', // candy pink
+        '#FEE440', // glowing yellow
+        '#00BBF9', // sky neon blue
+        '#9B5DE5', // electric violet
+        '#00F260', // neon green
+        '#FF9F1C', // bright orange
+        '#FF4D6D', // hot red pink
+        '#3A86FF', // strong blue
+        '#8338EC', // deep neon purple
+        '#06D6A0', // mint neon
+        '#FFBE0B'  // golden glow
+    ];
+    const Color = Color1[Math.floor(Math.random() * Color1.length)];
 
     const Course = await CourseModel.create({
         Name, Code, Color, Link, Class
@@ -229,7 +248,7 @@ async function LeftClub(req, res) {
             id,
             {
                 $pull: {
-                    Members: { MemberName: MemberName }  
+                    Members: { MemberName: MemberName }
                 }
             },
             { new: true }
@@ -361,6 +380,7 @@ async function CreateClubnot(req, res) {
 
     const { ClubID, EventName, Description, Time } = req.body;
 
+
     const Color1 = [
         '#FF3CAC', // neon pink
         '#784BA0', // rich purple
@@ -378,7 +398,6 @@ async function CreateClubnot(req, res) {
         '#06D6A0', // mint neon
         '#FFBE0B'  // golden glow
     ];
-
     const Color = Color1[Math.floor(Math.random() * Color1.length)];
 
     const Notification = await ClubNotification.create({
@@ -391,7 +410,7 @@ async function CreateClubnot(req, res) {
     })
 }
 
-async function GetClubNots(req,res) {
+async function GetClubNots(req, res) {
     const Notification = await ClubNotification.find();
 
     res.status(200).json({
@@ -400,25 +419,25 @@ async function GetClubNots(req,res) {
     })
 }
 
-async function PostAttendance(req,res) {
-    const {ID,Present,Total} = req.body;
+async function PostAttendance(req, res) {
+    const { ID, Present, Total } = req.body;
 
     const Attendance = await AttendanceModel.create({
-        ID,Present,Total
+        ID, Present, Total
     });
 
     res.status(201).json({
-        Message : "Attendance Posted",
-        Attendance : Attendance
+        Message: "Attendance Posted",
+        Attendance: Attendance
     });
 }
 
-async function GetAttendance(req,res) {
+async function GetAttendance(req, res) {
     const Attendance = await AttendanceModel.find();
 
     res.status(200).json({
-        Message : "Attendace fetched",
-        Attendance : Attendance
+        Message: "Attendace fetched",
+        Attendance: Attendance
     })
 }
 

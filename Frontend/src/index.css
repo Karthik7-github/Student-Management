@@ -712,7 +712,7 @@ transition: 0.3s ease;
 
 .studentdash .userlinks .link.active {
 background-color: white;
-color: black;
+color: var(--user-color);
 }
 
 
@@ -2959,5 +2959,58 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   stroke-dashoffset: 0;
   stroke-dasharray: 0 0 10 40 10 40;
   transition: 0.5s !important;
+}
+
+/* Course Home Page */
+
+.coursehome{
+  width: 95%;
+  min-height: 60vh;
+  background-color: transparent;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.coursehome .crow {
+  width: 96%;
+  min-height: 50vh;
+  background-color: transparent;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.coursehome .crow .cbox {
+  width: 95%;
+  height: 300px;
+  background-color: var(--cou-color);
+  border-radius: 10px;
+  border: 2px solid white;
+  box-shadow: 2px 2px 20px var(--cou-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+
+.coursehome .crow .cbox .coucir{
+  width: 100px;
+  height: 100px;
+  background-color: #000;
+  border-radius: 100px;
+  border: 2px solid white;
+  align-content: center;
+  font-style: italic;
+  color: var(--cou-color);
+}
+
+*{
+  font-style: italic;
 }
 
