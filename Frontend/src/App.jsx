@@ -25,8 +25,12 @@ import Clubfaq from "./pages/Clubs/Clubfaq";
 import Studentedit from "./pages/components/StudentEditingpage";
 
 //Teachers
-
-import TeacherLib from "./pages/Teacher/Teacherlbrary";
+import Teacherfees from './pages/Teacher/Teacherfees';
+import Teacherass from './pages/Teacher/Teacherass';
+import Teacherresults from './pages/Teacher/Teacherres';
+import Teacheranno from './pages/Teacher/Teacheranno';
+import Teacherclub from './pages/Teacher/Teacherclub'
+import Teacherchat from './pages/Teacher/Teacherchat';
 import TeacherCourses from "./pages/Teacher/TeacherCourses";
 import TeacherTt from "./pages/Teacher/TeacherTimetable";
 import Coursehome from "./pages/Teacher/Courses/Coursehome";
@@ -71,8 +75,14 @@ const App = () => {
           <Route path="remove" element={<Courseremove />} />
           <Route path="mine" element={<Coursemine />} />
         </Route>
-        <Route path="/teacher/library" element={<TeacherLib />} />
+        
         <Route path="/teacher/timetables" element={<TeacherTt />} />
+        <Route path="/teacher/fees" element={<Teacherfees />} />
+        <Route path="/teacher/announcements" element={<Teacheranno/>}/>
+        <Route path="/teacher/chat" element={<Teacherchat/>}/>
+        <Route path="/teacher/assesments" element={<Teacherass />} />
+        <Route path="/teacher/results" element={<Teacherresults />} />
+        <Route path="/teacher/clubs" element={<Teacherclub />} />
       </Routes>
     </div>
   );

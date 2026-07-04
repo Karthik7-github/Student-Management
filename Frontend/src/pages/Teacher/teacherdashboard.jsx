@@ -99,13 +99,6 @@ const teacherdashboard = () => {
         >
           <h3>Chats</h3>
         </NavLink>
-        <NavLink
-          to="/teacher/library"
-          className={({ isActive }) => (isActive ? "link active" : "link")}
-        >
-          <h3>Library</h3>
-        </NavLink>
-        
       </div>
       <div
         className="userfooter"

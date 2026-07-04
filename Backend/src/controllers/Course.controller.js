@@ -8,6 +8,7 @@ const ClubFaqsModel = require('../models/ClubFaq.model.js');
 const ResultModel = require('../models/Results.model.js');
 const ClubNotification = require('../models/ClubNotifications.model.js');
 const AttendanceModel = require('../models/Attendance.model.js');
+const FeesModel = require("../models/Fees.model.js");
 
 
 //  Courses
@@ -467,11 +468,31 @@ async function GetAttendance(req, res) {
     })
 }
 
+async function Createreceipt(req, res) {
+    const { MemberName, MemberID, Amount,Date, Receiptent } = req.body;
 
+    const Receipt = await FeesModel.create({
+        MemberName, MemberID, Amount, Date, Receiptent
+    });
+
+    res.status(201).json({
+        Message: 'Receipt Created',
+        Receipt: Receipt
+    })
+}
+
+async function Getreceipts(req,res) {
+    const Receipt = await FeesModel.find();
+
+    res.status(200).json({
+        Message:"Fetched all Receipts",
+        Receipt:Receipt
+    })
+}
 
 module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
     CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
     CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots,
-    PostAttendance, GetAttendance,Removecourse
+    PostAttendance, GetAttendance, Removecourse, Createreceipt,Getreceipts
 };

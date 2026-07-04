@@ -69,4 +69,10 @@ router.post("/postattend",CourseController.PostAttendance);
 
 router.get('/getattend',CourseController.GetAttendance);
 
+// Fees
+
+router.post('/createfees',CourseController.Createreceipt);
+
+router.get('/getfees',CourseController.Getreceipts);
+
 module.exports = router;
