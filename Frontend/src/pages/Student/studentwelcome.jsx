@@ -264,7 +264,7 @@ const Studentwelcome = () => {
                 >
                   <div>
                     <span>{nots.ClubID}</span>
-                    <span>📅 {nots.Time}</span>
+                    <span style={{paddingLeft:"100px"}}>📅 {nots.Time}</span>
                   </div>
                   <h2>{nots.EventName}</h2>
                   <p>{nots.Description}</p>

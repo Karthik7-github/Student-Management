@@ -2361,12 +2361,44 @@ body {
   width: 100%;
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  align-items:center;
+  justify-content: flex-start;
   gap: 20px;
+  flex-direction: column;
+}
+
+.stufees table{
+  width: 90%;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.stufees table thead th{
+  height: 7vh;
+  margin-left: 10px;
+  background-color: black;
+  border: 4px solid black;
+  font-size: 24px;
+  color: var(--user-color);
+
+}
+
+.stufees table tbody tr{
+  height: 6vh;
+  background-color: transparent;
+  margin-top: 10px;
+}
+
+.stufees table tbody tr td{
+  margin-top: 20px;
+  border: 4px solid black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 .clubnots{
+  text-align: center;
   width: 93%;
   min-height: 10vh;
   margin-left: 10px;
@@ -3116,5 +3148,140 @@ background: linear-gradient(135deg, #364a60, #384c6c);
 .launchins button:active {
  box-shadow: none;
  transform: translateY(0);
+}
+
+/* Fees Box */
+
+.feesbox{
+  width: 90%;
+  height: 90vh;
+  background-color: transparent;
+  margin-left: 5vh;
+  padding-top: 5vh;
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.feesbox .feebox{
+  width: 50%;
+  height: 20%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.feesbox .feebox label h2{
+  padding: 7px;
+  background-color: var(--user-color);
+  color: #383232;
+  transition: 0.3s ease;
+}
+
+.feesbox .feebox:hover label h2{
+  box-shadow: 5px 5px 0px black;
+}
+
+.feesbox .feebox input{
+  width: 400px;
+  height: 6vh;
+  border: 2px solid var(--user-color);
+  margin-left: 40px;
+  padding-left: 8px;
+  transition: 0.3s ease;
+  font-size: large;
+}
+
+.feesbox .feebox input:hover{
+  box-shadow: 10px 10px 0px var(--user-color);
+}
+
+.feesbox button{
+  width: 200px;
+  height: 8vh;
+  background-color: var(--user-color);
+  font-size: large;
+  margin-left: 20px;
+  transition: 0.3s ease;
+  font-weight: bolder;
+}
+
+.feesbox button:hover{
+   box-shadow: 10px 10px 0px black;
+}
+
+.feesbox button:active{
+    transform: translateY(2px) scale(0.97);
+}
+
+/*  Announcements Teacher Box */
+
+.annobox7{
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.annobox7 .classtitle{
+  width: 90%;
+  height: 18vh;
+  border: 2px solid transparent;
+  display: flex;
+}
+
+.annobox7 button{
+  background-color: var(--user-color);
+  border: 2px solid black;
+  width: 100px;
+  height: 7vh;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.annobox7 button:active{
+  width: 90px;
+  height: 6vh;
+}
+
+.annobox7 button:hover{
+  box-shadow: 0px 0px 4px black;
+}
+
+.annobox7 .classtitle .labin{
+  width: 50%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.labin label{
+  margin-left: 40px;
+  background-color: var(--user-color);
+  color: #000;
+  padding: 4px 10px;
+}
+
+.labin input {
+  margin-left: 60px;
+  width: 300px;
+  height: 6vh;
+  padding-left: 20px;
+  font-size: 20px;
+  transition: 0.3s ease;
+  border: 2px solid black;
+}
+
+.labin input:hover{
+  box-shadow: 10px 10px 0px var(--user-color);
 }
 

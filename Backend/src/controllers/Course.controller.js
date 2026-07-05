@@ -471,8 +471,28 @@ async function GetAttendance(req, res) {
 async function Createreceipt(req, res) {
     const { MemberName, MemberID, Amount,Date, Receiptent } = req.body;
 
+     const Color1 = [
+        '#FF3CAC', // neon pink
+        '#784BA0', // rich purple
+        '#2B86C5', // bright blue
+        '#00F5D4', // aqua neon
+        '#F15BB5', // candy pink
+        '#FEE440', // glowing yellow
+        '#00BBF9', // sky neon blue
+        '#9B5DE5', // electric violet
+        '#00F260', // neon green
+        '#FF9F1C', // bright orange
+        '#FF4D6D', // hot red pink
+        '#3A86FF', // strong blue
+        '#8338EC', // deep neon purple
+        '#06D6A0', // mint neon
+        '#FFBE0B'  // golden glow
+    ];
+
+    const Color = Color1[Math.floor(Math.random() * Color1.length)];
+
     const Receipt = await FeesModel.create({
-        MemberName, MemberID, Amount, Date, Receiptent
+        MemberName, MemberID, Amount, Date, Receiptent,Color
     });
 
     res.status(201).json({

@@ -9,10 +9,7 @@ const FeesSchema = mongoose.Schema({
     default: Date.now
   },
   Receiptent: String,
-  ReceiptID: {
-    type: String,
-    unique: true
-  }
+  Color:String
 });
 
 const FeesModel = new mongoose.model("Fees",FeesSchema);
