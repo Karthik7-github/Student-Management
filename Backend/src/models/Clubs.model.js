@@ -22,21 +22,6 @@ const ClubSchema = mongoose.Schema({
     Color:String,
     Color2:String,
     Color3:String,
-    NotificationView:{
-        type:Boolean,
-        default:false
-    },
-    Events:[{
-        EventName:String
-    }],
-    Awards:[{
-        AwardName:String
-    }],
-    Chat:[{
-        Message:String,
-        ID:String,
-        Time:Date
-    }]
 })
 
 const ClubModel = new mongoose.model('Clubs',ClubSchema);

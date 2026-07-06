@@ -3285,3 +3285,71 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   box-shadow: 10px 10px 0px var(--user-color);
 }
 
+/* Club Creation Page */
+
+.clubcreabox{
+  width: 90%;
+  min-height: 250vh;
+  background-color: transparent;
+  margin-left: 5vh;
+  padding-top: 5vh;
+  display:flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.clubcreabox .feebox{
+  width: 50%;
+  height: 20%;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.clubcreabox .feebox label h2{
+  padding: 7px;
+  background-color: var(--user-color);
+  color: #383232;
+  transition: 0.3s ease;
+}
+
+.clubcreabox .feebox:hover label h2{
+  box-shadow: 5px 5px 0px black;
+}
+
+.clubcreabox .feebox input{
+  width: 400px;
+  height: 6vh;
+  border: 2px solid var(--user-color);
+  margin-left: 40px;
+  padding-left: 8px;
+  transition: 0.3s ease;
+  font-size: large;
+}
+
+.clubcreabox .feebox input:hover{
+  box-shadow: 10px 10px 0px var(--user-color);
+}
+
+.clubcreabox button{
+  width: 200px;
+  height: 8vh;
+  background-color: var(--user-color);
+  font-size: large;
+  margin-left: 20px;
+  transition: 0.3s ease;
+  font-weight: bolder;
+}
+
+.clubcreabox button:hover{
+   box-shadow: 10px 10px 0px black;
+}
+
+.clubcreabox button:active{
+    transform: translateY(2px) scale(0.97);
+}
+
