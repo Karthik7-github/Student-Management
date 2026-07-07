@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Studentlayout from './StudentLayout';
+import Studentlayout from "./StudentLayout";
 
 const Studentresults = () => {
   const [data, setData] = useState([]);
@@ -16,50 +16,43 @@ const Studentresults = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const getPercentage = (score) => score + "%";
+  const student = data.filter((c) => c.UserID === User.StudentID);
 
-  // safety
-  if (!User) return <h2>No User Found</h2>;
-
-  const student = data.find(
-    (c) => c.UserID === User.StudentID
-  );
-
-  if (!student) return <h2>No Results Found</h2>;
+  console.log(student);
 
   return (
     <Studentlayout>
       <div className="studentres">
-      {student.Semesters.map((sem, index) => (
-        <div className="table-container" key={index}>
-          
-          <h2 className="table-title">
-            Results - Semester {sem.SemNumber}
-          </h2>
-
-          <table className="custom-table">
-            <thead style={{ backgroundColor: User.Color }}>
-              <tr>
-                <th>Subject</th>
-                <th>Marks</th>
-                <th>Percentage</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {sem.Subjects.map((sub, i) => (
-                <tr key={i}>
-                  <td>{sub.Subject}</td>
-                  <td>{sub.Score}</td>
-                  <th>{getPercentage(sub.Score)}</th>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-        </div>
-      ))}
-    </div>
+        <h1 style={{ marginTop: "20px" }}>Results</h1>
+        {student.length > 0 ? (
+          student.map((sem, key) => {
+            return (
+              <div style={{marginTop:"20px"}}>
+                <h1>Semster {sem.Sem}</h1>
+              <table className="custom-table" key={key} style={{width:"700px", marginTop:"10px"}}>
+                <thead style={{ backgroundColor: User.Color }}>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {sem.Subjects.map((sub, i) => (
+                    <tr key={i} style={{width:"300px"}}>
+                      <td>{sub.Name}</td>
+                      <td>{sub.Score}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              </div>
+              
+            );
+          })
+        ) : (
+          <h1>No results</h1>
+        )}
+      </div>
     </Studentlayout>
   );
 };

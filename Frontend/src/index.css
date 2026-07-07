@@ -2422,6 +2422,10 @@ body {
   padding: 15px;
   padding-bottom: 10px;
   color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
 }
 
 .studentwelcomepage{
@@ -3369,4 +3373,5 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   color: whitesmoke;
   background-color: black;
 }
+
 

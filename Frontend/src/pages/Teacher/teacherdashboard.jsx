@@ -64,12 +64,6 @@ const teacherdashboard = () => {
           <h3>Time Table</h3>
         </NavLink>
         <NavLink
-          to="/teacher/results"
-          className={({ isActive }) => (isActive ? "link active" : "link")}
-        >
-          <h3>Results</h3>
-        </NavLink>
-        <NavLink
           to="/teacher/assesments"
           className={({ isActive }) => (isActive ? "link active" : "link")}
         >

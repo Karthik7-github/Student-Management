@@ -27,7 +27,6 @@ import Studentedit from "./pages/components/StudentEditingpage";
 //Teachers
 import Teacherfees from './pages/Teacher/Teacherfees';
 import Teacherass from './pages/Teacher/Teacherass';
-import Teacherresults from './pages/Teacher/Teacherres';
 import Teacheranno from './pages/Teacher/Teacheranno';
 import Teacherclub from './pages/Teacher/Teacherclub'
 import Teacherchat from './pages/Teacher/Teacherchat';
@@ -82,7 +81,6 @@ const App = () => {
         <Route path="/teacher/announcements" element={<Teacheranno/>}/>
         <Route path="/teacher/chat" element={<Teacherchat/>}/>
         <Route path="/teacher/assesments" element={<Teacherass />} />
-        <Route path="/teacher/results" element={<Teacherresults />} />
         <Route path="/teacher/clubs" element={<Teacherclub />} />
       </Routes>
     </div>

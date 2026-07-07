@@ -384,10 +384,10 @@ async function GetClubFaqs(req, res) {
 
 async function CreateResult(req, res) {
 
-    const { UserID, Semesters } = req.body;
+    const { UserID, Sem, Subjects } = req.body;
 
     const Result = await ResultModel.create({
-        UserID, Semesters
+        UserID, Sem, Subjects
     });
 
     res.status(201).json({
@@ -404,6 +404,8 @@ async function GetResult(req, res) {
         Result: Result
     })
 }
+
+// Club Notifications 
 
 async function CreateClubnot(req, res) {
 
@@ -448,6 +450,8 @@ async function GetClubNots(req, res) {
     })
 }
 
+// Attendance
+
 async function PostAttendance(req, res) {
     const { ID, Present, Total } = req.body;
 
@@ -469,6 +473,8 @@ async function GetAttendance(req, res) {
         Attendance: Attendance
     })
 }
+
+//  Fees 
 
 async function Createreceipt(req, res) {
     const { MemberName, MemberID, Amount, Date, Receiptent } = req.body;
@@ -541,5 +547,5 @@ module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
     CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
     CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots,
-    PostAttendance, GetAttendance, Removecourse, Createreceipt, Getreceipts,TeacherCreateschedule,TeacherGetSchedule
+    PostAttendance, GetAttendance, Removecourse, Createreceipt, Getreceipts, TeacherCreateschedule, TeacherGetSchedule
 };
