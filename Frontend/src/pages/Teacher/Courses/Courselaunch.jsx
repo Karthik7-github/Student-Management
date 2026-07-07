@@ -6,7 +6,7 @@ const Courselaunch = () => {
 
   const [name, setName] = useState("")
   const [code, setCode] = useState("");
-  const [grade, setGrade] = useState(0);
+  const [grade, setGrade] = useState(null);
   const [link, setLink] = useState("");
 
   const handlesubmit = async (e) => {
@@ -60,9 +60,9 @@ const Courselaunch = () => {
       <div className="launchins">
         <div className="firsthalf">
           <label>
-            <h3>Subject Class : </h3>
+            <h3>Subject Sem : </h3>
           </label>
-          <input value={grade} type="text" placeholder="Enter the Subject Name " onChange={(res)=>{setGrade(res.target.value)}} required/>
+          <input value={grade} type="text" placeholder="Enter the Sem No : " onChange={(res)=>{setGrade(res.target.value)}} required/>
         </div>
         <div className="firsthalf">
           <label>

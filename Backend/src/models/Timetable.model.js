@@ -5,8 +5,7 @@ const Timetableschema = mongoose.Schema({
     Schedule:[
         {
             Time:{
-                type:String,
-                unique:true
+                type:String
             }
            ,Subject:{
             type:String

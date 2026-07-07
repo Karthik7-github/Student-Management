@@ -9,6 +9,8 @@ const ResultModel = require('../models/Results.model.js');
 const ClubNotification = require('../models/ClubNotifications.model.js');
 const AttendanceModel = require('../models/Attendance.model.js');
 const FeesModel = require("../models/Fees.model.js");
+const TeacherTable = require("../models/TeacherTimeTable.model.js");
+const TeacherTableModel = require('../models/TeacherTimeTable.model.js');
 
 
 //  Courses
@@ -469,9 +471,9 @@ async function GetAttendance(req, res) {
 }
 
 async function Createreceipt(req, res) {
-    const { MemberName, MemberID, Amount,Date, Receiptent } = req.body;
+    const { MemberName, MemberID, Amount, Date, Receiptent } = req.body;
 
-     const Color1 = [
+    const Color1 = [
         '#FF3CAC', // neon pink
         '#784BA0', // rich purple
         '#2B86C5', // bright blue
@@ -492,7 +494,7 @@ async function Createreceipt(req, res) {
     const Color = Color1[Math.floor(Math.random() * Color1.length)];
 
     const Receipt = await FeesModel.create({
-        MemberName, MemberID, Amount, Date, Receiptent,Color
+        MemberName, MemberID, Amount, Date, Receiptent, Color
     });
 
     res.status(201).json({
@@ -501,12 +503,37 @@ async function Createreceipt(req, res) {
     })
 }
 
-async function Getreceipts(req,res) {
+async function Getreceipts(req, res) {
     const Receipt = await FeesModel.find();
 
     res.status(200).json({
-        Message:"Fetched all Receipts",
-        Receipt:Receipt
+        Message: "Fetched all Receipts",
+        Receipt: Receipt
+    })
+}
+
+// Teacher Time Tables
+
+async function TeacherCreateschedule(req, res) {
+
+    const { ID, Grade, Schedule } = req.body;
+
+    const TimeTable = await TeacherTableModel.create({
+        ID, Grade, Schedule
+    });
+
+    res.status(201).json({
+        'Message': " Time Table Created Successfully",
+        Timetable: TimeTable
+    })
+}
+
+async function TeacherGetSchedule(req, res) {
+    const Shedule = await TeacherTableModel.find();
+
+    res.status(200).json({
+        'Message': "Time Table",
+        Timetable: Shedule
     })
 }
 
@@ -514,5 +541,5 @@ module.exports = {
     CreateCourse, Getcourss, Createschedule, GetSchedule, CreateAnnouncements, GetAnnouncements,
     CreateMessage, GetMessages, CreateClub, GetClubs, RegisterMember, CreateClubmsg, GetClubchats,
     CreateClubFaqs, GetClubFaqs, LeftClub, CreateResult, GetResult, CreateClubnot, GetClubNots,
-    PostAttendance, GetAttendance, Removecourse, Createreceipt,Getreceipts
+    PostAttendance, GetAttendance, Removecourse, Createreceipt, Getreceipts,TeacherCreateschedule,TeacherGetSchedule
 };

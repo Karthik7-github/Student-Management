@@ -4,7 +4,7 @@ const Courseremove = () => {
   const User = JSON.parse(localStorage.getItem("user"));
 
   const [code, setCode] = useState("");
-  const [grade, setGrade] = useState(0);
+  const [grade, setGrade] = useState(null);
 
   const handlesubmit = async (e) => {
     e.preventDefault();
@@ -63,12 +63,12 @@ const Courseremove = () => {
           </div>
           <div className="firsthalf">
             <label>
-              <h3>Subject Class : </h3>
+              <h3>Subject Sem No : </h3>
             </label>
             <input
               value={grade}
               type="text"
-              placeholder="Enter the Subject Grade "
+              placeholder="Enter the Sem No : "
               onChange={(res) => {
                 setGrade(res.target.value);
               }}

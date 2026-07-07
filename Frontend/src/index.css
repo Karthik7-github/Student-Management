@@ -3353,3 +3353,20 @@ background: linear-gradient(135deg, #364a60, #384c6c);
     transform: translateY(2px) scale(0.97);
 }
 
+/*  Course Main Page */
+
+.coursemain77{
+  width: 50%;
+  min-height: 70vh;
+  margin-left: 30px;
+  display: flex;
+  align-items: self-start;
+  padding: 15px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 20px;
+  padding-left: 50px;
+  color: whitesmoke;
+  background-color: black;
+}
+

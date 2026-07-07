@@ -37,6 +37,7 @@ import Coursehome from "./pages/Teacher/Courses/Coursehome";
 import Courselaunch from "./pages/Teacher/Courses/Courselaunch";
 import Courseremove from "./pages/Teacher/Courses/Courseremove";
 import Coursemine from './pages/Teacher/Courses/Couresemin'
+import Coursemain from './pages/Teacher/Courses/Coursemain';
 
 const App = () => {
   return (
@@ -69,7 +70,7 @@ const App = () => {
           <Route path="faq" element={<Clubfaq />} />
         </Route>
         <Route path="/teacher/courses" element={<TeacherCourses />}>
-          <Route index element={<Coursehome />} />
+          <Route index element={<Coursemain />} />
           <Route path="home" element={<Coursehome />} />
           <Route path="launch" element={<Courselaunch />} />
           <Route path="remove" element={<Courseremove />} />

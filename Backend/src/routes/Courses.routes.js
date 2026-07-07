@@ -75,4 +75,10 @@ router.post('/createfees',CourseController.Createreceipt);
 
 router.get('/getfees',CourseController.Getreceipts);
 
+// Teacher Time Table routes 
+
+router.post('/createttables',CourseController.TeacherCreateschedule);
+
+router.get('/getttables',CourseController.TeacherGetSchedule);
+
 module.exports = router;
