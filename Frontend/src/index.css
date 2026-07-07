@@ -3375,3 +3375,10 @@ background: linear-gradient(135deg, #364a60, #384c6c);
 }
 
 
+/* Teacher Assignments Page */
+
+.promenu .mainass{
+  width: 100%;
+  height: 70vh;
+  background-color: transparent;
+}

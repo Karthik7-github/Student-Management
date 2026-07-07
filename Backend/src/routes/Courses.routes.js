@@ -81,4 +81,10 @@ router.post('/createttables',CourseController.TeacherCreateschedule);
 
 router.get('/getttables',CourseController.TeacherGetSchedule);
 
+// Assignment 
+
+router.post('/createassignment',CourseController.CreateAssignment);
+
+router.get('/getassignments',CourseController.GetAssignments);
+
 module.exports = router;
