@@ -23,6 +23,7 @@ import Clubmembers from "../src/pages/Clubs/Clubmembers";
 import Clubhome from "./pages/Clubs/Clubhome";
 import Clubfaq from "./pages/Clubs/Clubfaq";
 import Studentedit from "./pages/components/StudentEditingpage";
+import Teacherallassignments from "./pages/Teacher/Teacherallasignments";
 
 //Teachers
 import Teacherfees from './pages/Teacher/Teacherfees';
@@ -79,6 +80,7 @@ const App = () => {
         <Route path="/teacher/timetables" element={<TeacherTt />} />
         <Route path="/teacher/fees" element={<Teacherfees />} />
         <Route path="/teacher/announcements" element={<Teacheranno/>}/>
+        <Route path="/teacher/assesments/allanounce" element={<Teacherallassignments/>}/>
         <Route path="/teacher/chat" element={<Teacherchat/>}/>
         <Route path="/teacher/assesments" element={<Teacherass />} />
         <Route path="/teacher/clubs" element={<Teacherclub />} />
