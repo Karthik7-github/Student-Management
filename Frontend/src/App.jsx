@@ -23,6 +23,7 @@ import Clubmembers from "../src/pages/Clubs/Clubmembers";
 import Clubhome from "./pages/Clubs/Clubhome";
 import Clubfaq from "./pages/Clubs/Clubfaq";
 import Studentedit from "./pages/components/StudentEditingpage";
+import Studentcompeltedassign from "./pages/Student/Studentcompletedass";
 import Teacherallassignments from "./pages/Teacher/Teacherallasignments";
 
 //Teachers
@@ -38,6 +39,7 @@ import Courselaunch from "./pages/Teacher/Courses/Courselaunch";
 import Courseremove from "./pages/Teacher/Courses/Courseremove";
 import Coursemine from './pages/Teacher/Courses/Couresemin'
 import Coursemain from './pages/Teacher/Courses/Coursemain';
+import Teacherallannouncements from './pages/Teacher/Teacherallanouncements';
 
 const App = () => {
   return (
@@ -54,6 +56,7 @@ const App = () => {
         <Route path="/student/timetables" element={<Studenttt />} />
         <Route path="/student/results" element={<Studentresults />} />
         <Route path="/student/assesments" element={<Studentass />} />
+        <Route path="/student/assesments/compeletdass" element={<Studentcompeltedassign/>}/>
         <Route path="/student/fees" element={<Studentfees />} />
         <Route path="/student/clubs" element={<Studentclub />} />
         <Route path="/student/announcements" element={<Studentanon />} />
@@ -84,6 +87,7 @@ const App = () => {
         <Route path="/teacher/chat" element={<Teacherchat/>}/>
         <Route path="/teacher/assesments" element={<Teacherass />} />
         <Route path="/teacher/clubs" element={<Teacherclub />} />
+        <Route path="/teacher/announcements/view" element={<Teacherallannouncements/>}/>
       </Routes>
     </div>
   );

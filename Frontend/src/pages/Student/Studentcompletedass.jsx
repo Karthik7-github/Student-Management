@@ -4,8 +4,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const Studentassesments = () => {
-
+const Studentcompletedass = () => {
   const User = JSON.parse(localStorage.getItem("user"));
 
   const [assignments, setAssignments] = useState([]);
@@ -37,9 +36,10 @@ const Studentassesments = () => {
   );
 
   console.log(inactiveAssignments);
-  
+
   return (
-   <StudentLayout>
+    <div>
+      <StudentLayout>
         <div className="promenu">
           <div className="userprotitle" style={{ "--user-color": User.Color }}>
             <h1
@@ -49,11 +49,11 @@ const Studentassesments = () => {
                 fontFamily: "cursive",
               }}
             >
-              All Assignments
+               Assignments
             </h1>
           </div>
           <div className="allclubs" style={{ "--user-color": User.Color }}>
-            <Link to="/student/assesments/compeletdass">
+            <Link to="/student/assesments">
               <button class="animated-button">
                 <svg
                   viewBox="0 0 24 24"
@@ -62,7 +62,7 @@ const Studentassesments = () => {
                 >
                   <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
                 </svg>
-                <span class="text">Completed</span>
+                <span class="text">Active</span>
                 <span class="circle"></span>
                 <svg
                   viewBox="0 0 24 24"
@@ -75,10 +75,10 @@ const Studentassesments = () => {
             </Link>
           </div>
           <div className="activeassigns" style={{ "--user-color": User.Color }}>
-            <h1 style={{ marginLeft: "20px" }}>Active : </h1>
+            <h1 style={{ marginLeft: "20px" }}>Completed : </h1>
             <div className="activebox123">
-              {activeAssignments.length > 0 ? (
-                activeAssignments.map((item, key) => {
+              {inactiveAssignments.length > 0 ? (
+                inactiveAssignments.map((item, key) => {
                   return (
                     <div
                       className="notboxwel"
@@ -98,14 +98,15 @@ const Studentassesments = () => {
                   );
                 })
               ) : (
-                <h1>No Active Assignments</h1>
+                <h1>No Completed Assignments</h1>
               )}
             </div>
-            <h1 style={{ marginLeft: "20px" }}> Total Active Assesments : {activeAssignments.length}</h1>
+            <h1 style={{ marginLeft: "20px" }}> Total Completed Assignments: {inactiveAssignments.length}</h1>
           </div>
         </div>
       </StudentLayout>
-  )
-}
+    </div>
+  );
+};
 
-export default Studentassesments;
+export default Studentcompletedass;
