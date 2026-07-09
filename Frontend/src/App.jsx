@@ -40,6 +40,8 @@ import Courseremove from "./pages/Teacher/Courses/Courseremove";
 import Coursemine from './pages/Teacher/Courses/Couresemin'
 import Coursemain from './pages/Teacher/Courses/Coursemain';
 import Teacherallannouncements from './pages/Teacher/Teacherallanouncements';
+import Teacherallclubviews from './pages/Teacher/Teacherallclubsview';
+import Teacherclubview from './pages/Teacher/Teacherviewclub';
 
 const App = () => {
   return (
@@ -88,6 +90,8 @@ const App = () => {
         <Route path="/teacher/assesments" element={<Teacherass />} />
         <Route path="/teacher/clubs" element={<Teacherclub />} />
         <Route path="/teacher/announcements/view" element={<Teacherallannouncements/>}/>
+        <Route path="/teacher/clubs/viewclubs" element={<Teacherallclubviews/>}/>
+        <Route path="/teacher/clubs/viewclubs/view" element={<Teacherclubview/>}/>
       </Routes>
     </div>
   );

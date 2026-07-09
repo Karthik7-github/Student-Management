@@ -1,5 +1,6 @@
-import React, { useState } from "react";
 import TeacherLayout from "./TeacherLayout";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Teacherclub = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -35,6 +36,17 @@ const Teacherclub = () => {
           Description: desc,
         }),
       });
+      const data = await res.json();
+      console.log(data);
+      setName("");
+      setCode("");
+      setType("");
+      setIncharge("");
+      setLeader("");
+      setDesc("");
+      setEmail("");
+      setId("");
+      setLink("");
     } catch (err) {
       console.log(err);
     }
@@ -42,7 +54,41 @@ const Teacherclub = () => {
 
   return (
     <TeacherLayout>
-      <form onSubmit={Createclub}>
+      <div className="promenu" style={{"--user-color":User.Color}}>
+        <div className="userprotitle">
+          <h1
+            style={{
+              fontSize: "40px",
+              marginTop: "20px",
+              fontFamily: "cursive"
+            }}
+          >
+            Register Clubs
+          </h1>
+        </div>
+        <div className="allclubs">
+          <Link to="/teacher/clubs/viewclubs">
+            <button class="animated-button">
+              <svg
+                viewBox="0 0 24 24"
+                class="arr-2"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+              <span class="text">Register Clubs</span>
+              <span class="circle"></span>
+              <svg
+                viewBox="0 0 24 24"
+                class="arr-1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path>
+              </svg>
+            </button>
+          </Link>
+        </div>
+       <form onSubmit={Createclub}>
         <div className="clubcreabox" style={{ "--user-color": User.Color }}>
           <h1>Create a Club</h1>
           <div className="feebox">
@@ -197,6 +243,7 @@ const Teacherclub = () => {
           <button type="submit">Create Club</button>
         </div>
       </form>
+      </div>
     </TeacherLayout>
   );
 };
