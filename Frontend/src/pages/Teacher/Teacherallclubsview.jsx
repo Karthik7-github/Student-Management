@@ -33,10 +33,10 @@ const Teacherallclubsview = () => {
       (selected === "All" || c.TypeofClub === selected),
   );
 
-  const handleview = async (club)=>{
-    console.log(club.Color2)
-    localStorage.setItem("Club",JSON.stringify(club));
-  }
+  const handleview = (club) => {
+    console.log("Clicked club:", club);
+    localStorage.setItem("Club", JSON.stringify(club));
+  };
 
   return (
     <TeacherLayout>
@@ -161,11 +161,11 @@ const Teacherallclubsview = () => {
                   </span>
                   <p className="desc">{Club.Description}</p>
                   <div className="resntntoclub">
-                    <Link to='/teacher/clubs/viewclubs/view'>
+                    <Link to="/teacher/clubs/viewclubs/view">
                       <button
                         className="primary-button"
                         style={{ "--club-color": Club.Color }}
-                        onClick={handleview(Club)}
+                        onClick={() => handleview(Club)}
                       >
                         Members : {Club.Members.length}
                       </button>

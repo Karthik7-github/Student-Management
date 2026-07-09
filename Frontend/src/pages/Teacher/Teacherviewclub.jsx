@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Teacherviewclub = () => {
 
-    const Club = JSON.parse(localStorage.getItem("club"));
+    const Club = JSON.parse(localStorage.getItem("Club"));
 
   return (
     <TeacherLayout>
@@ -23,7 +23,7 @@ const Teacherviewclub = () => {
           </div>
         </div>
         <div className="clubnavbar2">
-          <Link to="/student/clubs">
+          <Link to="/teacher/clubs/viewclubs">
             <div
               className="backbtn"
               style={{
@@ -42,35 +42,6 @@ const Teacherviewclub = () => {
             <div className="subcircle" style={{ color: Club.Color }}>
               {Club.ClubCode}
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="secondline">
-        <div class="nav">
-          <div class="container" style={{"--club-color":Club.Color}}>
-            <div class="btn"><Link style={{color:Club.Color}} to='home'>Home</Link></div>
-            <div class="btn"><Link style={{color:Club.Color}} to='chat'>Chat</Link></div>
-            <div class="btn"><Link style={{color:Club.Color}} to='mems'>Members</Link></div>
-            <div class="btn"><Link style={{color:Club.Color}} to='faq'>FAQ</Link></div>
-            <svg
-              class="outline"
-              overflow="visible"
-              width="400"
-              height="60"
-              viewBox="0 0 400 60"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect
-                class="rect"
-                pathLength="100"
-                x="0"
-                y="0"
-                width="400"
-                height="60"
-                fill="transparent"
-                stroke-width="5"
-              ></rect>
-            </svg>
           </div>
         </div>
       </div>
