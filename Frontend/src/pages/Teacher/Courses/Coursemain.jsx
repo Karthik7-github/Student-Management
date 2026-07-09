@@ -56,6 +56,7 @@ const sem2 = lib.filter(
   )
 
 
+
   return (
     <div className="coursemain77">
       <h1 style={{color:"gold"}}>Courses</h1>
@@ -67,7 +68,7 @@ const sem2 = lib.filter(
       <h2 style={{ paddingLeft: "30px" }}>Sem - 6 : {sem6.length}</h2>
       <h2 style={{ paddingLeft: "30px" }}>Sem - 7 : {sem7.length}</h2>
       <h2 style={{ paddingLeft: "30px" }}>Sem - 8 : {sem8.length}</h2>
-      <h1>Total Courses : {lib.length}</h1>
+      <h1 style={{color:"gold"}}>Total Courses : {lib.length}</h1>
     </div>
   );
 };

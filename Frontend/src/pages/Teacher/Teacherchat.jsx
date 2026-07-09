@@ -1,12 +1,11 @@
-import TeacherLayout from './TeacherLayout'
+import TeacherLayout from "./TeacherLayout";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 const Teacherchat = () => {
-
   const User = JSON.parse(localStorage.getItem("user"));
   const [rec, setRec] = useState("");
-  const currentUser = User.StudentID;
+  const currentUser = User.TeacherID;
   const [msg, setMsg] = useState([]);
   const [sendmsg, setSendmsg] = useState("");
 
@@ -19,8 +18,8 @@ const Teacherchat = () => {
 
   const filteredmsgs = msg.filter(
     (c) =>
-      (c.SenderID == rec && c.ReceiverID == User.StudentID) ||
-      (c.ReceiverID == rec && c.SenderID == User.StudentID),
+      (c.SenderID == rec && c.ReceiverID == User.TeacherID) ||
+      (c.ReceiverID == rec && c.SenderID == User.TeacherID),
   );
 
   const handlesubmit = async (e) => {
@@ -65,9 +64,9 @@ const Teacherchat = () => {
 
   return (
     <TeacherLayout>
-        <div className="promenu">
+      <div className="promenu">
         <div className="userprotitle" style={{ marginTop: "20px" }}>
-          <h1 style={{ fontSize: "40px"}}>Chats</h1>
+          <h1 style={{ fontSize: "40px" }}>Chats</h1>
         </div>
         <div className="persontosend">
           <input
@@ -79,7 +78,13 @@ const Teacherchat = () => {
           />
         </div>
         <div className="chatboxinner">
-          <div className="chatboxouter" style={{boxShadow:`0px 0px 5px black`,backgroundColor:User.Color}}>
+          <div
+            className="chatboxouter"
+            style={{
+              boxShadow: `0px 0px 5px black`,
+              backgroundColor: User.Color,
+            }}
+          >
             {filteredmsgs.length > 0 ? (
               filteredmsgs.map((message, index) => {
                 return (
@@ -137,7 +142,7 @@ const Teacherchat = () => {
         </div>
       </div>
     </TeacherLayout>
-  )
-}
+  );
+};
 
-export default Teacherchat
+export default Teacherchat;

@@ -453,10 +453,10 @@ async function GetClubNots(req, res) {
 // Attendance
 
 async function PostAttendance(req, res) {
-    const { ID, Present, Total } = req.body;
+    const { ID, Name, Present, Total } = req.body;
 
     const Attendance = await AttendanceModel.create({
-        ID, Present, Total
+        ID, Name, Present, Total
     });
 
     res.status(201).json({

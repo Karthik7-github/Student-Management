@@ -5,6 +5,9 @@ const AttendanceSchema = mongoose.Schema({
         type:String,
         unique:true
     },
+    Name:{
+        type:String,
+    },
     Present:Number,
     Total:Number
 })
