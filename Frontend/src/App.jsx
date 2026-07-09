@@ -42,6 +42,8 @@ import Coursemain from './pages/Teacher/Courses/Coursemain';
 import Teacherallannouncements from './pages/Teacher/Teacherallanouncements';
 import Teacherallclubviews from './pages/Teacher/Teacherallclubsview';
 import Teacherclubview from './pages/Teacher/Teacherviewclub';
+import Teacherinfo from './pages/Teacher/Teacherinfo';
+import Teacherattendace from './pages/Teacher/Teacherattendace';
 
 const App = () => {
   return (
@@ -92,6 +94,8 @@ const App = () => {
         <Route path="/teacher/announcements/view" element={<Teacherallannouncements/>}/>
         <Route path="/teacher/clubs/viewclubs" element={<Teacherallclubviews/>}/>
         <Route path="/teacher/clubs/viewclubs/view" element={<Teacherclubview/>}/>
+        <Route path="/teacher/info" element={<Teacherinfo/>}/>
+        <Route path="/teacher/attendance" element={<Teacherattendace/>}/>
       </Routes>
     </div>
   );

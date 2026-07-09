@@ -3414,3 +3414,12 @@ background: linear-gradient(135deg, #364a60, #384c6c);
   flex-shrink: 0;     
 }
 
+/* Club View Box */
+
+.clubviewbox123{
+  width: 90%;
+  min-height: 50vh;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: transparent;
+}

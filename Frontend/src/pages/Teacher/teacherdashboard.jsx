@@ -36,7 +36,7 @@ const teacherdashboard = () => {
             <h1 style={{ color: User.Color }}>{User.Name[0]}</h1>
           </div>
         </Link>
-        <Link to="/teacher/profile">
+        <Link to="/teacher/info">
           <h1>
             {User?.Name}
             <i class="fa-solid fa-user"></i>
@@ -92,6 +92,12 @@ const teacherdashboard = () => {
           className={({ isActive }) => (isActive ? "link active" : "link")}
         >
           <h3>Chats</h3>
+        </NavLink>
+        <NavLink
+          to="/teacher/attendance"
+          className={({ isActive }) => (isActive ? "link active" : "link")}
+        >
+          <h3>Attendance</h3>
         </NavLink>
       </div>
       <div
