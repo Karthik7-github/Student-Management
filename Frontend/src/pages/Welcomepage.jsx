@@ -9,7 +9,7 @@ const Welcomepage = () => {
           
         </div>
         <div className="Welcomeheading">
-          <h1>Welcome to Your School: Your Gateway to Academic Success.</h1>
+          <h1>Welcome to Your College: Your Gateway to Academic Success.</h1>
         </div>
         <div className="welcomeloginbtn">
           <Link to="/Login">
