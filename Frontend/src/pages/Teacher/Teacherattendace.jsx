@@ -38,7 +38,7 @@ const Teacherattendace = () => {
               fontSize: "40px",
             }}
           >
-            Time Table
+            Attendance
           </h1>
         </div>
         <div className="tt">

@@ -66,6 +66,9 @@ const teacherwelcome = () => {
   return (
     <TeacherLayout>
       <div className="promenu" style={{marginTop:"20px"}}>
+        <div className="welcomehead" style={{backgroundColor:"black",width:"450px",padding:"3px",borderRadius:"5px",paddingLeft:"20px"}}>
+          <h1 style={{ color: User.Color}}>Welcome {User.Name} . . .</h1>{" "}
+        </div>
         <div className="activeassigns" style={{ "--user-color": User.Color }}>
           <h1 style={{ marginLeft: "20px" }}>Active : </h1>
           <div className="activebox123">
