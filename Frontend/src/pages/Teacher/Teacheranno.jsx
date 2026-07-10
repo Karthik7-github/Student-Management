@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TeacherLayout from "./TeacherLayout";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const Teacheranno = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -14,7 +15,7 @@ const Teacheranno = () => {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/course/createannouncement",
+        `${API}/api/course/createannouncement`,
         {
           method: "POST",
           headers: {

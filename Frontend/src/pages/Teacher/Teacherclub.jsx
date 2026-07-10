@@ -1,6 +1,7 @@
 import TeacherLayout from "./TeacherLayout";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+const API = import.meta.env.VITE_API;
 
 const Teacherclub = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -19,7 +20,7 @@ const Teacherclub = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/api/course/createclub", {
+      const res = await fetch(`${API}/api/course/createclub`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

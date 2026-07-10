@@ -3,6 +3,7 @@ import StudentLayout from "./StudentLayout";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const Studentcompletedass = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -11,7 +12,7 @@ const Studentcompletedass = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getassignments")
+      .get(`${API}/api/course/getassignments`)
       .then((res) => setAssignments(res.data.Assignment))
       .catch((err) => console.error(err));
   }, []);

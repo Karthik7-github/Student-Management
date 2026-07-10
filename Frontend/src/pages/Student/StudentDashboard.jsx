@@ -1,12 +1,13 @@
 import { Link, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const Studentdashboard = () => {
   const User = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
   const Handlelogout = async () => {
-    const res = await fetch("http://localhost:5000/api/teacher/logout", {
+    const res = await fetch(`${API}/api/teacher/logout`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import { useState } from "react";
+const API = import.meta.env.VITE_API;
 
 const Courselaunch = () => {
 
@@ -12,7 +13,7 @@ const Courselaunch = () => {
   const handlesubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/course/createcourse", {
+      const res = await fetch(`${API}/api/course/createcourse`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

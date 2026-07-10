@@ -1,13 +1,14 @@
 import TeacherLayout from "./TeacherLayout";
 import { useState, useEffect } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Teacherattendace = () => {
   const [shedule, setShedule] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getattend")
+      .get(`${API}/api/course/getattend`)
       .then((res) => {
         setShedule(res.data.Attendance);
       })

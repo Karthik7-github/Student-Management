@@ -2,6 +2,7 @@ import StudentLayout from "./StudentLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom'
+const API = import.meta.env.VITE_API;
 
 const Studentlib = () => {
 
@@ -11,7 +12,7 @@ const Studentlib = () => {
 
 useEffect(() => {
   axios
-    .get("http://localhost:5000/api/course/getcourses")
+    .get(`${API}/api/course/getcourses`)
     .then((res) => {
       const courses = res.data.Course;
       const shuffled = [...courses];

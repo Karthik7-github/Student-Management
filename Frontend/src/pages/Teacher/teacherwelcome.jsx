@@ -1,6 +1,7 @@
 import TeacherLayout from "./TeacherLayout";
 import { useState,useEffect } from "react";
 import axios from 'axios'
+const API = import.meta.env.VITE_API;
 
 const teacherwelcome = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -9,7 +10,7 @@ const teacherwelcome = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getassignments")
+      .get(`${API}/api/course/getassignments`)
       .then((res) => setAssignments(res.data.Assignment))
       .catch((err) => console.error(err));
   }, []);
@@ -35,7 +36,7 @@ const teacherwelcome = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getannouncements")
+      .get(`${API}/api/course/getannouncements`)
       .then((res) => {
         setAnnouncement(res.data.Announcements);
       })
@@ -55,7 +56,7 @@ const teacherwelcome = () => {
  
 
     useEffect(() => {
-       axios.get("http://localhost:5000/api/course/getclubnots")
+       axios.get(`${API}/api/course/getclubnots`)
       .then((res) => setClubnot(res.data.Notification))
       .catch(console.log);
     }, [])

@@ -1,4 +1,5 @@
 import { useState } from "react";
+const API = import.meta.env.VITE_API;
 
 const Courseremove = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -15,7 +16,7 @@ const Courseremove = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/course/removecourse", {
+      const res = await fetch(`${API}/api/course/removecourse`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

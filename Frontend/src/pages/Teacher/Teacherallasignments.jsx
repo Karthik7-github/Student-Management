@@ -2,6 +2,7 @@ import TeacherLayout from "./TeacherLayout";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Teacherallanounces = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -10,7 +11,7 @@ const Teacherallanounces = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getassignments")
+      .get(`${API}/api/course/getassignments`)
       .then((res) => setAssignments(res.data.Assignment))
       .catch((err) => console.error(err));
   }, []);

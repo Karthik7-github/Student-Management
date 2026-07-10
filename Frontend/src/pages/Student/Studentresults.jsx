@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Studentlayout from "./StudentLayout";
+const API = import.meta.env.VITE_API;
 
 const Studentresults = () => {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ const Studentresults = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getresult")
+      .get(`${API}/api/course/getresult`)
       .then((res) => {
         setData(res.data.Result);
       })

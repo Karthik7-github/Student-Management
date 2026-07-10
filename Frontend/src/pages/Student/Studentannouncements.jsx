@@ -2,6 +2,7 @@ import { useState } from "react";
 import StudentLayout from "./StudentLayout";
 import { useEffect } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Studentannouncements = () => {
 
@@ -10,7 +11,7 @@ const Studentannouncements = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getannouncements")
+      .get(`${API}/api/course/getannouncements`)
       .then((res) => {
         setAnnouncement(res.data.Announcements);
       })

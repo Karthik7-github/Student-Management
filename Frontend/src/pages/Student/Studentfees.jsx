@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import StudentLayout from "./StudentLayout";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Studentfees = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -9,7 +10,7 @@ const Studentfees = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getfees")
+      .get(`${API}/api/course/getfees`)
       .then((res) => {
         setitem(res.data.Receipt);
       })

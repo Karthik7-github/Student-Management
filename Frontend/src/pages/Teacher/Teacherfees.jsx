@@ -1,5 +1,6 @@
 import TeacherLayout from "./TeacherLayout";
 import { useState } from "react";
+const API = import.meta.env.VITE_API;
 
 const Teacherfees = () => {
 
@@ -18,7 +19,7 @@ const handlesubmit = async (e) => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/course/createfees", {
+    const res = await fetch(`${API}/api/course/createfees`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

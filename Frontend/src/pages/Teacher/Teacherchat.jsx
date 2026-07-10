@@ -1,6 +1,7 @@
 import TeacherLayout from "./TeacherLayout";
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Teacherchat = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -11,7 +12,7 @@ const Teacherchat = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getmsgs")
+      .get(`${API}/api/course/getmsgs`)
       .then((res) => setMsg(res.data.Message))
       .catch((err) => console.log(err));
   }, []);
@@ -36,7 +37,7 @@ const Teacherchat = () => {
     setMsg((prev) => [...prev, newMsg]);
 
     try {
-      const res = await fetch("http://localhost:5000/api/course/createmsg", {
+      const res = await fetch(`${API}/api/course/createmsg`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

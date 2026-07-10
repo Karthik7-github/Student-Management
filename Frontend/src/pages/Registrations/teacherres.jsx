@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const teacherres = () => {
   const [name, setName] = useState("");
@@ -15,7 +16,7 @@ const teacherres = () => {
  const Handlesubmit = async (e) => {
   e.preventDefault();
   try {
-    const res = await fetch("http://localhost:5000/api/teacher/tregister", {
+    const res = await fetch(`${API}/api/teacher/tregister`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

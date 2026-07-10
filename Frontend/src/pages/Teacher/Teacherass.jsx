@@ -1,6 +1,7 @@
 import { useState } from "react";
 import TeacherLayout from "./TeacherLayout";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const Teacherass = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -13,7 +14,7 @@ const Teacherass = () => {
   const handlesubmit = async (e) =>{
     e.preventDefault();
     try{
-      const res = await fetch('http://localhost:5000/api/course/createassignment',{
+      const res = await fetch(`${API}/api/course/createassignment`,{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

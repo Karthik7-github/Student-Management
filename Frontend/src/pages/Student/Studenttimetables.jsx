@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import StudentLayout from "./StudentLayout";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Studenttimetables = () => {
   const [shedule, setShedule] = useState([]);
@@ -8,7 +9,7 @@ const Studenttimetables = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getschedule")
+      .get(`${API}/api/course/getschedule`)
       .then((res) => {
         setShedule(res.data.Timetable);
       })

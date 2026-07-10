@@ -2,6 +2,7 @@ import TeacherLayout from './TeacherLayout'
 import { Link } from 'react-router-dom'
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+const API = import.meta.env.VITE_API;
 
 const Teacherallanouncements = () => {
 
@@ -10,7 +11,7 @@ const Teacherallanouncements = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getannouncements")
+      .get(`${API}/api/course/getannouncements`)
       .then((res) => {
         setAnnouncement(res.data.Announcements);
       })

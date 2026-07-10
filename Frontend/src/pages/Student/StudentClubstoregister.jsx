@@ -2,6 +2,7 @@ import StudentLayout from "../Student/StudentLayout";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const StudentClubstoregister = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -17,7 +18,7 @@ const StudentClubstoregister = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getclubs")
+      .get(`${API}/api/course/getclubs`)
       .then((res) => {
         setClub(res.data.Club);
       })
@@ -36,7 +37,7 @@ const StudentClubstoregister = () => {
 
   const handleregister = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/course/update/${id}`, {
+      const res = await fetch(`${API}/api/course/update/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

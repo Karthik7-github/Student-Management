@@ -1,6 +1,7 @@
 import StudentLayout from "./StudentLayout";
 import { useState, useEffect } from "react";
 import axios from "axios";
+const API = import.meta.env.VITE_API;
 
 const Studentwelcome = () => {
   const userData = localStorage.getItem("user");
@@ -28,27 +29,27 @@ const Studentwelcome = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getclubnots")
+      .get(`${API}/api/course/getclubnots`)
       .then((res) => setClubnot(res.data.Notification))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/course/getclubs")
+      .get(`${API}/api/course/getclubs`)
       .then((res) => setClub(res.data.Club))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/course/getannouncements")
+      .get(`${API}/api/course/getannouncements`)
       .then((res) => setAnnouncement(res.data.Announcements))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/course/getschedule")
+      .get(`${API}/api/course/getschedule`)
       .then((res) => setShedule(res.data.Timetable))
       .catch(console.log);
 
     axios
-      .get("http://localhost:5000/api/course/getattend")
+      .get(`${API}/api/course/getattend`)
       .then((res) => setAttend(res.data.Attendance))
       .catch(console.log);
   }, []);

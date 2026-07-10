@@ -2,6 +2,7 @@ import StudentLayout from "./StudentLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+const API = import.meta.env.VITE_API;
 
 const Studentclubs = () => {
   const User = JSON.parse(localStorage.getItem("user"));
@@ -15,7 +16,7 @@ const Studentclubs = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/course/getclubs")
+      .get(`${API}/api/course/getclubs`)
       .then((res) => {
         setClub(res.data.Club);
       })
