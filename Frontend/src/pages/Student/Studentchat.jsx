@@ -10,12 +10,19 @@ const Studentchat = () => {
   const [msg, setMsg] = useState([]);
   const [sendmsg, setSendmsg] = useState("");
 
-  useEffect(() => {
+useEffect(() => {
+  const fetchMessages = () => {
     axios
       .get(`${API}/api/course/getmsgs`)
       .then((res) => setMsg(res.data.Message))
       .catch((err) => console.log(err));
-  }, []);
+  };
+
+  fetchMessages();
+
+  const interval = setInterval(fetchMessages, 1000);
+  return () => clearInterval(interval); 
+}, []);
 
   const filteredmsgs = msg.filter(
     (c) =>
